@@ -1,121 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DNA Landscaping - Precision. Growth. Natural Beauty.</title>
-    <link rel="stylesheet" href="brand_styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        * { box-sizing: border-box; }
-        body { margin: 0; font-family: var(--font-body); }
-        header {
-            background: white;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            z-index: 100;
-        }
-        .logo img { height: 50px; }
-        nav a {
-            margin-left: 1.5rem;
-            text-decoration: none;
-            color: var(--charcoal);
-            font-weight: 600;
-        }
-        .hero {
-            background: linear-gradient(rgba(44, 95, 45, 0.7), rgba(44, 95, 45, 0.7)), 
-                        url('dna_landscaping_brand_assets/web_optimized/hero_1600.jpg') center/cover no-repeat;
-            color: white;
-            text-align: center;
-            padding: 5rem 1rem;
-        }
-        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
-        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 2rem; }
-        .btn { display: inline-block; text-decoration: none; padding: 12px 24px; border-radius: 4px; }
-        .btn-primary { background: var(--forest-green); color: white; }
-        .section {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .service-card {
-            background: var(--warm-cream);
-            padding: 2rem;
-            border-radius: 8px;
-            text-align: center;
-        }
-        .service-card h3 { color: var(--earth-brown); }
-        footer {
-            background: var(--forest-green);
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-        .contact-info {
-            margin-top: 1rem;
-            font-size: 0.9rem;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DNA Landscaping — Precision. Growth. Natural Beauty.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand_styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="dna_landscaping_brand_assets/logos/dna_primary_horizontal_200.png" alt="DNA Landscaping Logo">
-        </div>
-        <nav>
-            <a href="#services">Services</a>
-            <a href="#work">Our Work</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+  <header class="site-header">
+    <div class="site-logo">
+      <img src="/dna_landscaping_brand_assets/logos/dna_primary_horizontal_400.png" alt="DNA Landscaping logo">
+    </div>
+    <nav class="site-nav">
+      <a href="#services">Services</a>
+      <a href="#work">Our Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <section class="hero">
-        <h1>Precision. Growth. Natural Beauty.</h1>
-        <p>We transform outdoor spaces into thriving ecosystems that enhance property value and quality of life.</p>
-        <a href="#contact" class="btn btn-primary">Get a Free Consultation</a>
-    </section>
+  <section class="hero" style="background-image: url('/dna_landscaping_brand_assets/web_optimized/dna_vercel_screenshot_full.webp')">
+    <div class="hero-inner">
+      <h1>Precision. Growth. Natural Beauty.</h1>
+      <p class="lead">We transform outdoor spaces into thriving ecosystems that enhance property value and quality of life.</p>
+      <div style="display:flex;gap:12px;align-items:center;">
+        <a class="btn btn-primary pulse" href="#contact">Get a Free Consultation</a>
+        <a class="btn btn-ghost" href="#work">View Our Work</a>
+      </div>
+    </div>
+  </section>
 
-    <section id="services" class="section">
-        <h2>Our Services</h2>
-        <div class="divider-organic"></div>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Landscape Design</h3>
-                <p>Custom designs that blend natural beauty with structural excellence.</p>
-            </div>
-            <div class="service-card">
-                <h3>Garden Installation</h3>
-                <p>Professional planting and installation of your dream garden.</p>
-            </div>
-            <div class="service-card">
-                <h3>Seasonal Maintenance</h3>
-                <p>Ongoing care to keep your landscape flourishing year-round.</p>
-            </div>
+  <section id="services" class="section">
+    <div class="container">
+      <h2 style="margin-top:0;">Our Services</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px;">
+        <div style="padding:18px;border:1px solid rgba(0,0,0,0.05);border-radius:8px;background:#fff;">
+          <h3 style="margin:0 0 8px;color:var(--forest-green)">Landscape Design</h3>
+          <p style="margin:0;color:var(--charcoal)">Custom designs that blend natural beauty with structural excellence.</p>
         </div>
-    </section>
+        <div style="padding:18px;border:1px solid rgba(0,0,0,0.05);border-radius:8px;background:#fff;">
+          <h3 style="margin:0 0 8px;color:var(--forest-green)">Garden Installation</h3>
+          <p style="margin:0;color:var(--charcoal)">Professional planting and installation of your dream garden.</p>
+        </div>
+        <div style="padding:18px;border:1px solid rgba(0,0,0,0.05);border-radius:8px;background:#fff;">
+          <h3 style="margin:0 0 8px;color:var(--forest-green)">Seasonal Maintenance</h3>
+          <p style="margin:0;color:var(--charcoal)">Ongoing care to keep your landscape flourishing year-round.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <div class="logo">
-            <img src="dna_landscaping_brand_assets/logos/dna_social_profile_200.png" alt="DNA Landscaping Icon" style="height: 40px;">
+  <footer class="site-footer">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <img src="/dna_landscaping_brand_assets/logos/dna_social_profile_200.png" alt="DNA icon" style="height:56px">
+        <div>
+          <div style="font-weight:700">DNA Landscaping</div>
+          <div style="font-size:13px;color:var(--warm-cream);opacity:0.9">Precision. Growth. Natural Beauty.</div>
         </div>
-        <p>&copy; 2026 DNA Landscaping. All rights reserved.</p>
-        <div class="contact-info">
-            <p>123 Garden Lane, Green Valley, CA 90210</p>
-            <p>(555) 123-4567 | info@dnalandscaping.com</p>
-            <p>www.dnalandscaping.com</p>
-        </div>
-    </footer>
+      </div>
+      <div style="text-align:right;font-size:14px;">
+        <div>© 2026 DNA Landscaping. All rights reserved.</div>
+        <div style="opacity:0.9">(555) 123-4567 | info@dnalandscaping.com</div>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
