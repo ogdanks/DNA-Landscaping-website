@@ -1,0 +1,18 @@
+<!-- Request a Quote -->
+<section class="quote-section">
+  <div class="container">
+    <div class="quote-card">
+      <h2>Transform Your Outdoor Space</h2>
+      <form action="https://formsubmit.co/YOUREMAIL@example.com" method="POST" class="quote-form">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <div><label for="name">Full Name *</label><input type="text" id="name" name="name" required></div>
+        <div><label for="email">Email Address *</label><input type="email" id="email" name="email" required></div>
+        <div class="full-width"><label for="phone">Phone Number (Optional)</label><input type="tel" id="phone" name="phone"></div>
+        <div class="full-width"><label for="message">Project Details *</label><textarea id="message" name="message" placeholder="Tell us about your dream landscape..." required></textarea></div>
+        <button type="submit" class="btn">Send Request</button>
+        <div id="quote-status" aria-live="polite" class="sr-only"></div>
+      </form>
+    </div>
+  </div>
+</section>
+<!-- End Request a Quote -->
