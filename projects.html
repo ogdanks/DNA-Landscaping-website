@@ -10,27 +10,28 @@
   <link rel="stylesheet" href="brand_styles.css" />
   <link rel="icon" href="dna_landscaping_brand_assets/logos/dna_favicon.ico" type="image/x-icon" />
 
-  <!-- Local Overrides -->
   <style>
-    .hero.bg-accent {
-      color: #ffffff;
-      padding: 60px 20px;
-    }
-    .hero h1,
-    .hero p {
-      color: white !important;
-    }
+    /* Ensure hero text is visible */
+    .hero.bg-accent { color: #fff; padding: 60px 20px; }
+    .hero h1, .hero p { color: #fff !important; }
+
+    /* Gallery layout */
     .project-images {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 16px;
       margin-top: 20px;
     }
     .project-images img {
       width: 100%;
+      height: auto;
+      object-fit: cover;
       border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     }
+
+    /* Small visual polish for headings */
+    .project h2 { margin-top: 32px; }
   </style>
 </head>
 <body>
@@ -86,24 +87,28 @@
 
     <section class="content-section">
       <div class="container narrow">
-        <!-- STONE MASONRY SECTION -->
+
+        <!-- STONE MASONRY & FOUNDATIONS -->
         <div class="project">
           <h2>Stone Masonry & Foundations</h2>
           <div class="project-images">
-            <img src="assets/images/projects/web_IMG_20260606_150510.jpg" alt="Stone masonry detail" />
-            <img src="assets/images/projects/web_IMG_20260606_150422.jpg" alt="Foundation work" />
-            <img src="assets/images/projects/web_IMG_20260606_150509.jpg" alt="Stone pathway" />
+            <!-- Stone images -->
+            <img src="assets/images/projects/IMG_20260606_150510.jpg" alt="Stone masonry detail">
+            <img src="assets/images/projects/IMG_20260606_150422.jpg" alt="Foundation work">
+            <img src="assets/images/projects/IMG_20260606_150509.jpg" alt="Stone pathway">
           </div>
         </div>
 
-        <!-- HEDGE SCULPTING SECTION -->
+        <!-- HEDGE SCULPTING -->
         <div class="project">
           <h2>Large-Scale Privacy Hedge Sculpting</h2>
           <div class="project-images">
-            <img src="assets/images/projects/web_IMG_20260606_150510 (1).jpg" alt="Hedge sculpting detail" />
-            <img src="assets/images/projects/web_IMG_20260606_150510 (2).jpg" alt="Finished hedge" />
+            <!-- Hedge images -->
+            <img src="assets/images/projects/IMG_20260606_150510 (1).jpg" alt="Hedge sculpting detail">
+            <img src="assets/images/projects/IMG_20260606_150510 (2).jpg" alt="Finished hedge">
           </div>
         </div>
+
       </div>
     </section>
   </main>
@@ -118,7 +123,6 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Mobile menu toggle
     (function(){
       const openClass = 'mobile-open';
       const button = document.getElementById('mobile-menu-button');
