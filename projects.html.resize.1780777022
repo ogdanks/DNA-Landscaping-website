@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | DNA Landscaping</title>
+
+  <!-- Shared Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="brand_styles.css" />
+  <link rel="icon" href="dna_landscaping_brand_assets/logos/dna_favicon.ico" type="image/x-icon" />
+</head>
+<body>
+  <header class="site-header" id="site-header">
+    <div class="container header-row">
+      <a class="brand" href="index.html" aria-label="DNA Landscaping Home">
+        <img class="logo" src="dna_landscaping_brand_assets/logos/dna_primary_horizontal_200.png" alt="DNA Landscaping">
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html#services" class="nav-link">Services</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="index.html#standards" class="nav-link">Standards</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a class="contact-cta nav-link" href="index.html#contact">Get a Quote</a></li>
+        </ul>
+      </nav>
+
+      <button class="mobile-menu-button" id="mobile-menu-button" aria-controls="mobile-nav" aria-expanded="false" aria-label="Open menu">
+        <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path class="ham-top" d="M3 7h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+          <path class="ham-mid" d="M3 12h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+          <path class="ham-btm" d="M3 17h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <div id="mobile-nav" class="mobile-nav" aria-hidden="true" role="dialog" aria-label="Mobile navigation">
+    <div class="mobile-overlay" id="mobile-overlay" tabindex="-1" aria-hidden="true"></div>
+    <div class="mobile-panel" role="document" aria-modal="true">
+      <div class="mobile-panel-inner">
+        <button class="mobile-close" id="mobile-close" aria-label="Close menu">&times;</button>
+        <ul>
+          <li><a href="index.html#services" class="mobile-nav-link">Services</a></li>
+          <li><a href="index.html#about" class="mobile-nav-link">About</a></li>
+          <li><a href="index.html#standards" class="mobile-nav-link">Standards</a></li>
+          <li><a href="projects.html" class="mobile-nav-link">Projects</a></li>
+          <li><a class="mobile-contact" href="index.html#contact">Get a Quote</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero bg-accent">
+      <div class="container narrow text-center">
+        <h1>Our Projects</h1>
+        <p>Explore our portfolio of stunning landscape designs and transformations.</p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container narrow">
+        <div class="project">
+          <h2>Stone Masonry & Foundations</h2>
+          <div class="project-images">
+            <img src="assets/images/projects/IMG_20260606_150510.jpg" alt="Stone masonry detail" />
+            <img src="assets/images/projects/IMG_20260606_150422.jpg" alt="Foundation work" />
+            <img src="assets/images/projects/IMG_20260606_150509.jpg" alt="Stone pathway" />
+          </div>
+        </div>
+
+        <div class="project">
+          <h2>Large-Scale Privacy Hedge Sculpting</h2>
+          <div class="project-images">
+            <img src="assets/images/projects/IMG_20260606_150510 (1).jpg" alt="Hedge sculpting detail" />
+            <img src="assets/images/projects/IMG_20260606_150510 (2).jpg" alt="Finished hedge" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div class="footer-left">© <span id="year"></span> DNA Landscaping</div>
+      <div class="footer-right">Over 30 Years of Quality Service</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    (function(){
+      const openClass = 'mobile-open';
+      const button = document.getElementById('mobile-menu-button');
+      const mobileNav = document.getElementById('mobile-nav');
+      const overlay = document.getElementById('mobile-overlay');
+      const closeBtn = document.getElementById('mobile-close');
+
+      function setOpen(isOpen) {
+        button.setAttribute('aria-expanded', String(isOpen));
+        mobileNav.setAttribute('aria-hidden', String(!isOpen));
+        document.documentElement.classList.toggle(openClass, isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      }
+
+      button.addEventListener('click', () => setOpen(button.getAttribute('aria-expanded') !== 'true'));
+      closeBtn.addEventListener('click', () => setOpen(false));
+      overlay.addEventListener('click', () => setOpen(false));
+    })();
+  </script>
+</body>
+</html>
