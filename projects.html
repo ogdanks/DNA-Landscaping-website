@@ -34,88 +34,6 @@
     /* Small visual polish for headings */
     .project h2 { margin-top: 32px; }
   </style>
-  <style id="hero-fix">
-
-    .hero.bg-accent,
-
-    .hero.bg-accent h1,
-
-    .hero.bg-accent p {
-
-      background: #2C5F2D !important;
-
-      color: #ffffff !important;
-
-      opacity: 1 !important;
-
-      text-shadow: none !important;
-
-      filter: none !important;
-
-      mix-blend-mode: normal !important;
-
-      font-weight: bold !important;
-
-    }
-
-  </style>
-  <style id="isolated-hero-styles">
-
-    #projects-hero {
-
-      background-color: #2C5F2D !important;
-
-      padding: 80px 20px !important;
-
-      text-align: center !important;
-
-      position: relative !important;
-
-      z-index: 1 !important;
-
-    }
-
-    #projects-hero h1,
-
-    #projects-hero p {
-
-      color: #ffffff !important;
-
-      opacity: 1 !important;
-
-      text-shadow: none !important;
-
-      filter: none !important;
-
-      mix-blend-mode: normal !important;
-
-      font-weight: 800 !important;
-
-      position: relative !important;
-
-      z-index: 2 !important;
-
-    }
-
-    #projects-hero h1 {
-
-      font-size: 3rem !important;
-
-      margin-bottom: 12px !important;
-
-    }
-
-    #projects-hero p {
-
-      font-size: 1.25rem !important;
-
-      max-width: 700px;
-
-      margin: 0 auto !important;
-
-    }
-
-  </style>
 </head>
 <body>
   <header class="site-header" id="site-header">
@@ -161,11 +79,20 @@
   </div>
 
   <main>
-    <section id="projects-hero" class="hero bg-accent">
-      <div class="container narrow text-center">
-        <h1>Our Projects</h1>
-        <p>Explore our portfolio of stunning landscape designs and transformations.</p>
+    <section class="hero" aria-label="Hero">
+
+      <div class="hero-inner container">
+
+        <div class="hero-text reveal-on-load">
+
+          <h1 class="hero-title" data-text="Our Projects">Our Projects</h1>
+
+          <p class="hero-sub">Explore our portfolio of stunning landscape designs and transformations.</p>
+
+        </div>
+
       </div>
+
     </section>
 
     <section class="content-section">
