@@ -13,7 +13,7 @@
   <!-- Header -->
   <header class="header">
     <div class="container navbar">
-      <a href="/"><img src="assets/logos/Primary_Logo_Horizontal.png" alt="DNA Landscaping Logo" class="logo-img"></a>
+      <a href="/" class="logo">DNA LANDSCAPING</a>
       <nav class="nav-links">
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
