@@ -1,0 +1,8 @@
+
+/* Request Quote styles */
+.contact-grid { display:grid; grid-template-columns:1fr 420px; gap:28px; align-items:start; }
+@media (max-width:920px){ .contact-grid{grid-template-columns:1fr;} }
+
+.contact-info h2{ color:#2C5F2D; margin:0 0 6px; font-size:24px; }
+.contact-info .lead{ color:#4b4b4b; }
+.btn-submit{ background:#2C5F2D; color:#fff; border-radius:10px; padding:11px 16px; border:none; }
