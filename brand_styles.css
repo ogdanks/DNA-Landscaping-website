@@ -1,10 +1,9 @@
-/* DNA Landscaping - Reverted Brand Styles */
+/* DNA Landscaping - Contrast-Boosted Hero */
 
 :root{
   --forest: #245729;
   --leaf: #7fbf5a;
   --leaf-strong: #4f9b39;
-  --earth: #8B6F47;
   --cream: #F5F1E8;
   --char: #333233;
   --white: #ffffff;
@@ -31,15 +30,40 @@ body{
 .main-nav a{font-family:"Montserrat",sans-serif;font-weight:600;color:var(--char);text-decoration:none;padding:8px 10px;border-radius:6px}
 .contact-cta{background:var(--leaf-strong);color:var(--white);padding:8px 12px;border-radius:6px}
 
+/* Hero (Contrast Fixed) */
 .hero{
   background-image: url('dna_landscaping_brand_assets/web_optimized/hero_1600.jpg');
   background-size:cover;background-position:center;
   position:relative;min-height:74vh;display:flex;align-items:center;
+  /* Reduced overlay coverage, darker, crisper */
+  background-blend-mode: multiply;
 }
-.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(36,87,41,0.62), rgba(36,87,41,0.42));}
-.hero-text{max-width:920px;margin:0 auto;text-align:left;color:var(--white);padding:48px 20px}
-.hero-title{font-family:"Montserrat",sans-serif;font-weight:800;font-size:3rem;margin-bottom:14px;line-height:1.02;text-shadow:0 10px 30px rgba(0,0,0,0.5)}
-.hero-sub{font-size:1.12rem;margin-bottom:22px;color:rgba(255,255,255,0.95)}
+.hero::before{
+  content:"";
+  position:absolute;inset:0;
+  background: rgba(12, 44, 12, 0.7); /* DEEP dark green overlay */
+}
+.hero-text{max-width:920px;margin:0 auto;text-align:left;color:var(--white);padding:48px 20px;z-index:2;position:relative}
+
+/* Text Effects for Legibility */
+.hero-title{
+  font-family:"Montserrat",sans-serif;font-weight:800;font-size:3rem;margin-bottom:14px;line-height:1.02;
+  position:relative;
+  text-shadow:0 12px 32px rgba(0,0,0,0.7); /* Crisp black shadow */
+}
+.hero-title::after{
+  content:attr(data-text); /* Duplicate text for stroke effect */
+  position:absolute;
+  top:0;left:0;
+  z-index:-1;
+  color:transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,0.9);
+}
+
+.hero-sub{
+  font-size:1.12rem;margin-bottom:22px;color:rgba(255,255,255,0.95);
+  text-shadow:0 4px 16px rgba(0,0,0,0.4);
+}
 
 .btn{display:inline-block;padding:14px 28px;border-radius:10px;font-weight:700;text-decoration:none;cursor:pointer;font-family:"Montserrat",sans-serif}
 .btn-primary{background:var(--leaf);color:var(--white);box-shadow:0 14px 34px rgba(127,191,90,0.14)}
