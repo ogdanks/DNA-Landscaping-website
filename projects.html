@@ -152,5 +152,16 @@
       overlay.addEventListener('click', () => setOpen(false));
     })();
   </script>
+  <script>
+
+    // Reveal Animations
+
+    window.addEventListener("load", () => {
+
+      document.querySelectorAll(".reveal-on-load").forEach((el) => el.classList.add("reveal"));
+
+    });
+
+  </script>
 </body>
 </html>
