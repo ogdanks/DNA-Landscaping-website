@@ -1,18 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>DNA Landscaping</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="brand_styles.css" />
   <link rel="icon" href="dna_landscaping_brand_assets/logos/dna_favicon.ico" type="image/x-icon" />
 </head>
 <body>
-  <header class="site-header minimal">
-    <div class="container header-inner">
-      <a class="logo-link" href="/">
-        <img class="logo-small" src="dna_landscaping_brand_assets/logos/dna_primary_horizontal_200.png" alt="DNA Landscaping">
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="home-link" href="/" aria-label="DNA Landscaping Home">
+        <img class="logo-small" src="dna_landscaping_brand_assets/logos/dna_primary_horizontal_200.png" alt="DNA Landscaping logo">
       </a>
+
       <nav class="main-nav" aria-label="Main navigation">
         <ul>
           <li><a href="#services">Services</a></li>
@@ -24,57 +29,54 @@
   </header>
 
   <main>
-    <!-- Logo-centric Hero -->
-    <section class="hero logo-hero" aria-label="Hero - DNA Landscaping">
-      <div class="hero-inner container">
-        <div class="logo-hero-box">
-          <img class="logo-hero" src="dna_landscaping_brand_assets/logos/dna_primary_horizontal_200.png" alt="DNA Landscaping">
-        </div>
+    <!-- Logo-first Hero -->
+    <section class="hero" aria-label="Hero: DNA Landscaping">
+      <div class="hero-content container">
+        <figure class="logo-badge" aria-hidden="true">
+          <img src="dna_landscaping_brand_assets/logos/dna_social_profile_200.png" alt="">
+        </figure>
 
         <h1 class="hero-title">Precision. Growth. Natural Beauty.</h1>
-        <p class="hero-sub">Landscape design & maintenance built around your property's unique DNA.</p>
+        <p class="hero-lead">Landscape design, installation & seasonal care tailored to your property's DNA.</p>
 
-        <div class="hero-ctas">
+        <div class="cta-row">
           <a class="btn btn-primary" href="#contact">Get a Free Quote</a>
-          <a class="btn btn-secondary" href="#services">Our Services</a>
+          <a class="btn btn-outline" href="#services">See Services</a>
         </div>
       </div>
     </section>
 
-    <!-- Content sections (kept minimal for now) -->
     <section id="services" class="content-section">
-      <div class="container">
-        <h2 class="text-center">Our Services</h2>
-        <p class="text-center">Design, installation, maintenance, and seasonal care.</p>
+      <div class="container narrow">
+        <h2>Our Services</h2>
+        <p>Design & build landscapes, irrigation setup, routine maintenance, and seasonal programs—delivered with horticultural science and attention to detail.</p>
       </div>
     </section>
 
-    <section id="about" class="content-section bg-light">
-      <div class="container">
-        <h2 class="text-center">About DNA Landscaping</h2>
-        <p class="text-center">We combine horticulture science with precision craftsmanship for beautiful, lasting landscapes.</p>
+    <section id="about" class="content-section bg-soft">
+      <div class="container narrow">
+        <h2>About DNA Landscaping</h2>
+        <p>We combine ecological knowledge with precise installation to create beautiful, low-maintenance landscapes that thrive.</p>
       </div>
     </section>
 
     <section id="contact" class="content-section">
-      <div class="container">
-        <h2 class="text-center">Contact</h2>
-        <p class="text-center">Reach out for a site visit and free estimate.</p>
+      <div class="container narrow">
+        <h2>Contact</h2>
+        <p>Interested in a site visit or estimate? Reach out and we'll follow up promptly.</p>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-branding">
-        <img src="dna_landscaping_brand_assets/logos/dna_social_profile_200.png" alt="DNA Landscaping" class="footer-logo">
-      </div>
-      <p>&copy; <span id="year"></span> DNA Landscaping. All rights reserved.</p>
+    <div class="container footer-row">
+      <img class="footer-mark" src="dna_landscaping_brand_assets/logos/dna_social_profile_200.png" alt="DNA Landscaping">
+      <div class="copyright">&copy; <span id="current-year"></span> DNA Landscaping</div>
     </div>
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('current-year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
