@@ -1,0 +1,58 @@
+/* DNA Landscaping Brand Design Tokens */
+
+:root {
+    /* Primary Palette */
+    --forest-green: #2C5F2D;
+    --leaf-green: #97BC62;
+    --earth-brown: #8B6F47;
+
+    /* Secondary Palette */
+    --sky-blue: #7FB3D5;
+    --warm-cream: #F5F1E8;
+    --charcoal: #3D3D3D;
+    --white: #FFFFFF;
+
+    /* Typography */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--charcoal);
+    background-color: var(--white);
+    margin: 0;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--forest-green);
+    font-weight: 700;
+}
+
+.bg-cream { background-color: var(--warm-cream); }
+.text-brown { color: var(--earth-brown); }
+
+.btn-primary {
+    background-color: var(--forest-green);
+    color: var(--white);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--leaf-green);
+}
+
+.divider-organic {
+    height: 3px;
+    background-color: var(--leaf-green);
+    width: 60px;
+    margin: 1rem 0;
+}
