@@ -12,40 +12,49 @@ body{
   color:var(--char);
   background:var(--cream);
   line-height:1.6;
+  overflow-x: hidden; /* Prevents tiny shifts */
 }
 
-/* Perfect Center Header */
+/* Optical Centering Header */
 .site-header{
   background: var(--white);
-  padding: 50px 20px;
+  padding: 60px 0;
   border-bottom: 1px solid rgba(0,0,0,0.05);
+  width: 100%;
 }
+
 .branding-stack{
   display: flex;
   flex-direction: column;
-  align-items: center; /* THIS CENTERS THE ITEMS */
+  align-items: center;
   justify-content: center;
   text-align: center;
+  width: 100%;
+  /* Nudge the whole stack to the right to balance the heavy "DNA" block on the left */
+  transform: translateX(12px); 
 }
+
 .logo-main{
-  height: 110px;
+  height: 115px;
   width: auto;
   display: block;
 }
+
 .brand-tagline{
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 1rem;
   color: var(--forest);
-  letter-spacing: 5px; /* Spaced out for modern feel */
+  letter-spacing: 6px;
   text-transform: uppercase;
-  margin-top: 15px; 
-  padding-left: 5px; /* Balances the letter spacing of the last character */
+  margin-top: 20px;
+  /* Resetting any padding that might cause shifts */
+  padding: 0;
+  margin-right: 6px; /* Balance the letter-spacing of the final letter */
 }
 
-/* Hero Section */
 .hero{
-  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('dna_landscaping_brand_assets/web_optimized/hero_1600.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)), url('dna_landscaping_brand_assets/web_optimized/hero_1600.jpg');
   background-size: cover;
   background-position: center;
   min-height: 55vh;
@@ -53,11 +62,12 @@ body{
   align-items: center;
   justify-content: center;
 }
+
 .cta-row{ display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
 
 .btn{
   display: inline-block;
-  padding: 16px 32px;
+  padding: 18px 36px;
   border-radius: 2px;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
@@ -71,25 +81,24 @@ body{
 .btn-outline{ background: var(--white); color: var(--forest); border: 2px solid var(--forest); }
 .btn-outline:hover{ background: var(--forest); color: var(--white); transform: translateY(-2px); }
 
-/* Content */
-.content-section{ padding: 80px 0; }
+.content-section{ padding: 100px 0; }
 .container{ max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 .narrow{ max-width: 800px; margin: 0 auto; text-align: center; }
-.divider{ text-align: center; padding: 20px 0; color: var(--leaf); font-size: 2rem; }
+.divider{ text-align: center; padding: 30px 0; color: var(--leaf); font-size: 2rem; }
 
 h2{
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
+  letter-spacing: 3px;
+  margin-bottom: 25px;
   color: var(--forest);
 }
 
-.site-footer{ background: var(--forest); color: var(--white); padding: 40px 0; text-align: center; }
+.site-footer{ background: var(--forest); color: var(--white); padding: 50px 0; text-align: center; }
 
 @media (max-width: 768px){
-  .logo-main{ height: 75px; }
-  .brand-tagline{ font-size: 0.8rem; letter-spacing: 3px; }
-  .hero{ min-height: 40vh; }
+  .branding-stack{ transform: translateX(8px); } /* Smaller nudge for mobile */
+  .logo-main{ height: 80px; }
+  .brand-tagline{ font-size: 0.8rem; letter-spacing: 4px; }
 }
