@@ -1,56 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DNA Landscaping | Precision. Growth. Natural Beauty.</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --forest-green: #2C5F2D;
-            --leaf-green: #97BC62;
-            --earth-brown: #8B6F47;
-            --warm-cream: #F5F1E8;
-            --charcoal: #3D3D3D;
-        }
-        body { font-family: 'Open Sans', sans-serif; margin: 0; color: var(--charcoal); line-height: 1.6; }
-        h1, h2, .logo { font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--forest-green); }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-        header { background: #fff; border-bottom: 1px solid #eee; padding: 20px 0; }
-        .nav-inner { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 24px; text-decoration: none; }
-        .cta-button { background: var(--forest-green); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; }
-        .hero { background: var(--warm-cream); padding: 80px 0; text-align: center; }
-        .hero h1 { font-size: 48px; margin-bottom: 10px; }
-        .hero p { font-size: 18px; max-width: 600px; margin: 0 auto 30px; }
-        footer { background: var(--charcoal); color: #fff; padding: 40px 0; font-size: 14px; margin-top: 60px; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DNA Landscaping | Precision. Growth. Natural Beauty.</title>
+  <meta name="description" content="Professional landscape design and maintenance serving Green Valley and surrounding areas.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --clr-forest: #2C5F2D;
+      --clr-leaf: #97BC62;
+      --clr-earth: #8B6F47;
+      --clr-sky: #7FB3D5;
+      --clr-cream: #F5F1E8;
+      --clr-charcoal: #3D3D3D;
+
+      --ff-heading: 'Montserrat', sans-serif;
+      --ff-body: 'Open Sans', sans-serif;
+
+      --spacing-sm: 12px;
+      --spacing-md: 24px;
+      --spacing-lg: 40px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--ff-body);
+      color: var(--clr-charcoal);
+      background: white;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background: white;
+      border-bottom: 1px solid #eee;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+    }
+    .logo {
+      font-family: var(--ff-heading);
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--clr-forest);
+      text-decoration: none;
+    }
+    .tagline {
+      font-size: 13px;
+      color: var(--clr-charcoal);
+      opacity: 0.75;
+      margin-left: 12px;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 24px;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--clr-charcoal);
+      font-size: 14px;
+    }
+    .header-cta {
+      background: var(--clr-forest);
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(90deg, rgba(151,188,98,0.05), rgba(44,95,45,0.05));
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-family: var(--ff-heading);
+      font-weight: 700;
+      font-size: 32px;
+      color: var(--clr-forest);
+      margin: 0 0 12px;
+    }
+    .hero p {
+      font-size: 16px;
+      max-width: 600px;
+      margin: 0 auto 24px;
+      color: var(--clr-charcoal);
+    }
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--clr-forest);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .btn-secondary {
+      border: 1px solid var(--clr-leaf);
+      color: var(--clr-forest);
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      background: white;
+    }
+
+    /* Sections */
+    section {
+      padding: var(--spacing-lg) 0;
+    }
+    h2 {
+      font-family: var(--ff-heading);
+      color: var(--clr-forest);
+      font-size: 28px;
+      margin-bottom: var(--spacing-md);
+    }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--spacing-md);
+    }
+    .service-card {
+      background: var(--clr-cream);
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 20px;
+      transition: transform 0.2s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+    }
+
+    /* Why Choose */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: var(--spacing-md);
+    }
+    .pillar {
+      text-align: center;
+      padding: 20px;
+    }
+    .pillar h3 {
+      color: var(--clr-forest);
+      margin-bottom: 8px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--clr-cream);
+      padding: var(--spacing-lg) 0;
+      border-top: 1px solid #eee;
+      font-size: 14px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-md);
+    }
+    .copyright {
+      margin-top: var(--spacing-md);
+      text-align: center;
+      font-size: 12px;
+      color: var(--clr-charcoal);
+      opacity: 0.75;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container nav-inner">
-            <a href="#" class="logo">DNA LANDSCAPING</a>
-            <div style="font-size: 12px; opacity: 0.7;">Precision. Growth. Natural Beauty.</div>
-            <a href="tel:5551234567" class="cta-button">Call (555) 123-4567</a>
+
+  <header>
+    <div class="container header-inner">
+      <a href="/" class="logo">DNA LANDSCAPING</a>
+      <span class="tagline">Precision. Growth. Natural Beauty.</span>
+      <nav>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#why">Why Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="header-cta">Get a Quote</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>DNA Landscaping</h1>
+      <p>We combine design, horticulture, and build expertise to create outdoor spaces that thrive. Serving Green Valley & surrounding communities.</p>
+      <div class="hero-buttons">
+        <a href="#quote" class="btn-primary">Get a Free Quote</a>
+        <a href="#portfolio" class="btn-secondary">View Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Landscape Design</h3>
+          <p>Custom planting plans, irrigation layouts, and hardscape integration tailored to your space and lifestyle.</p>
         </div>
-    </header>
-    <section class="hero">
-        <div class="container">
-            <h1>DNA Landscaping</h1>
-            <p>Designing and maintaining beautiful, high-precision landscapes in Green Valley and surrounding areas.</p>
-            <div style="display: flex; gap: 15px; justify-content: center;">
-                <a href="#services" class="cta-button">Services</a>
-                <a href="#quote" class="cta-button" style="background: var(--leaf-green);">Get a Quote</a>
-            </div>
+        <div class="service-card">
+          <h3>Maintenance & Lawn Care</h3>
+          <p>Ongoing care including pruning, fertilizing, mowing, and seasonal cleanups to keep your garden thriving.</p>
         </div>
-    </section>
-    <footer>
-        <div class="container" style="display: flex; justify-content: space-between;">
-            <div>&copy; 2026 DNA Landscaping<br>Licensed & Insured CA-123456</div>
-            <div>www.dnalandscapeco.com</div>
+        <div class="service-card">
+          <h3>Hardscapes & Installations</h3>
+          <p>Patios, retaining walls, walkways, lighting, and water features designed and built to last.</p>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="container">
+      <h2>Why Choose DNA Landscaping</h2>
+      <div class="pillars">
+        <div class="pillar">
+          <h3>Precision</h3>
+          <p>Meticulous planning and licensed professionals ensure every detail is perfect.</p>
+        </div>
+        <div class="pillar">
+          <h3>Growth</h3>
+          <p>We plant for the future — selecting species that mature beautifully and sustainably.</p>
+        </div>
+        <div class="pillar">
+          <h3>Natural Beauty</h3>
+          <p>Each design enhances the natural character of your land and surroundings.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 style="font-family: var(--ff-heading); color: var(--clr-forest); margin-top:0;">DNA Landscaping</h3>
+          <p>123 Garden Lane<br>Green Valley, CA 90210</p>
+          <p>(555) 123-4567<br><a href="mailto:info@dnalandscaping.com" style="color:inherit;">info@dnalandscaping.com</a></p>
+        </div>
+        <div>
+          <h3 style="font-family: var(--ff-heading); color: var(--clr-forest); margin-top:0;">Quick Links</h3>
+          <ul style="list-style:none; padding:0;">
+            <li><a href="#services" style="color:inherit; text-decoration:none;">Services</a></li>
+            <li><a href="#why" style="color:inherit; text-decoration:none;">Why Us</a></li>
+            <li><a href="#contact" style="color:inherit; text-decoration:none;">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; 2026 DNA Landscaping. All rights reserved.<br>
+        Licensed & Insured — CA LIC #123456
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
