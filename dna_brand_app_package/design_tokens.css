@@ -1,0 +1,33 @@
+/* DNA Landscaping Design Tokens */
+:root {
+  --color-forest: #2C5F2D;
+  --color-leaf: #97BC62;
+  --color-earth: #8B6F47;
+  --color-sky: #7FB3D5;
+  --color-cream: #F5F1E8;
+  --color-char: #3D3D3D;
+
+  --font-display: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  --font-body: 'Open Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+
+  --h1-size: 36px;
+  --h2-size: 28px;
+  --h3-size: 20px;
+  --body-size: 16px;
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+}
+
+/* Example button */
+.btn-primary {
+  background: var(--color-forest);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-family: var(--font-display);
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1125" height="2436" viewBox="0 0 1125 2436">
+  <rect width="100%" height="100%" fill="#F5F1E8" />
+  <image href="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=60" x="0" y="0" width="100%" height="65%" preserveAspectRatio="xMidYMid slice" />
+  <rect x="0" y="1583" width="1125" height="853" fill="#FFFFFF" rx="40" />
+  <text x="56" y="1730" font-family="Montserrat, sans-serif" font-weight="700" font-size="36" fill="#2C5F2D">Welcome to DNA Landscaping</text>
+  <text x="56" y="1790" font-family="Open Sans, sans-serif" font-weight="400" font-size="18" fill="#3D3D3D" width="1013">Beautiful, lasting landscapes designed with precision and care.</text>
+  <rect x="56" y="2030" width="1013" height="72" rx="12" fill="#2C5F2D" />
+  <text x="112" y="2076" font-family="Montserrat, sans-serif" font-weight="600" font-size="20" fill="#FFFFFF">Get Started</text>
+</svg>
