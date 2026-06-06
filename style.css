@@ -14,3 +14,15 @@
 .contact-info h2{ color:#2C5F2D; margin:0 0 6px; font-size:24px; }
 .contact-info .lead{ color:#4b4b4b; }
 .btn-submit{ background:#2C5F2D; color:#fff; border-radius:10px; padding:11px 16px; border:none; }
+
+/* Quote Form Polish */
+.form-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
+.form-group input, .form-group select, .form-group textarea {
+  width:100%; padding:12px; border:1px solid #ddd; border-radius:6px; font-size:1rem;
+}
+.form-group.full { grid-column:1 / -1; }
+.btn-submit {
+  background:#2C5F2D; color:#fff; border:none; padding:14px; border-radius:8px;
+  font-weight:bold; font-size:1rem; cursor:pointer; width:100%;
+}
+.btn-submit:hover { background:#1e4a20; }

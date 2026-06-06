@@ -139,50 +139,37 @@
         <h2 class="reveal-on-scroll">Request a Quote</h2>
         <p class="reveal-on-scroll" style="margin-bottom: 32px;">Ready to discuss your project? Send us your details and we will reach out to schedule a site visit.</p>
         
-        <form id="quote-form" action="https://formsubmit.co/andrew@dnalandscapingco.com" method="POST" class="contact-form reveal-on-scroll">
-          <div class="form-group">
-            <input type="text" name="name" id="full-name" placeholder="Full Name *" required>
-          </div>
+        <form id="quote-form" class="contact-form reveal-on-scroll" action="https://formsubmit.co/andrew@dnalandscapingco.com" method="POST">
+  <input type="hidden" name="_cc" value="dennis@dnalandscapingco.com">
+  <input type="hidden" name="_subject" value="New DNA Landscaping Quote Request">
+  <input type="hidden" name="_next" value="https://www.dnalandscapingco.com/thanks">
 
-          <!-- Phone field added (optional) -->
-          <div class="form-group">
-            <input type="tel" name="phone" id="phone-number" placeholder="Phone (optional)" pattern="^[0-9+\-\s()]{7,}$" aria-describedby="phone-help">
-            <small id="phone-help" style="display:block; margin-top:6px; color:#6b6b6b; font-size:0.9rem;">Include area code. We'll only use this to call about your quote.</small>
-          </div>
-
-          <div class="form-group">
-            <input type="email" name="email" id="email-address" placeholder="Email Address *" required>
-          </div>
-          <div class="form-group">
-            <select name="service" id="service-type" required>
-              <option value="" disabled selected>Select Service Interest *</option>
-              <option value="maintenance">Maintenance & Stewardship</option>
-              <option value="hardscape">Hardscape & Paving</option>
-              <option value="planting">Planting</option>
-              <option value="drainage">Drainage Improvements</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <textarea name="message" id="message" rows="4" placeholder="Tell us about your property and project goals *" required></textarea>
-          </div>
-          
-          <!-- Anti-spam & Config -->
-          <input type="hidden" name="_cc" value="dennis@dnalandscapingco.com">
-          <input type="hidden" name="_subject" value="New DNA Landscaping Quote Request">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="true">
-          <input type="hidden" name="_honeypot">
-          <input type="hidden" name="_timeout" value="5000">
-          <input type="hidden" name="_next" value="https://dnalandscapingco.com">
-
-          <button type="submit" class="btn btn-primary" style="width:100%; border:none;">Send Request</button>
-          
-          <!-- Success Message (Hidden by default) -->
-          <div id="form-success" class="form-success-message" style="display:none; margin-top:20px; padding:16px; background:#fff; border-left:4px solid var(--leaf); color:var(--forest);">
-             <strong>Thank you!</strong> Your request has been received. We will contact you shortly to schedule a consultation.
-          </div>
-        </form>
+  <div class="form-grid">
+    <div class="form-group">
+      <input type="text" name="name" id="full-name" placeholder="Full Name *" required>
+    </div>
+    <div class="form-group">
+      <input type="tel" name="phone" id="phone-number" placeholder="Phone (optional)">
+    </div>
+    <div class="form-group">
+      <input type="email" name="email" id="email-address" placeholder="Email Address *" required>
+    </div>
+    <div class="form-group">
+      <select name="service" id="service-type" required>
+        <option value="" disabled selected>Select a service…</option>
+        <option value="maintenance">Maintenance & Stewardship</option>
+        <option value="hardscape">Hardscape & Paving</option>
+        <option value="planting">Planting & Establishment</option>
+        <option value="drainage">Drainage Improvements</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div class="form-group full">
+      <textarea name="message" rows="4" placeholder="Tell us more about your project…" required></textarea>
+    </div>
+    <button type="submit" class="btn-submit">Send Request</button>
+  </div>
+</form>
       </div>
     </section>
   </main>
