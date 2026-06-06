@@ -135,75 +135,56 @@
     </section>
 
     <section id="contact" class="content-section bg-accent">
-  <div class="container narrow">
-    <div class="contact-grid" style="display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start;">
-      <div class="contact-info">
+      <div class="container narrow">
         <h2 class="reveal-on-scroll">Request a Quote</h2>
-        <p class="reveal-on-scroll" style="margin-bottom:18px;">Ready to discuss your project? Send us your details and we will reach out to schedule a site visit.</p>
-        <ul style="list-style:none;padding:0;margin:12px 0 0;display:flex;gap:8px;flex-wrap:wrap;">
-          <li style="background:#fff;color:#2C5F2D;padding:6px 10px;border-radius:999px;border:1px solid rgba(0,0,0,0.04);">Free on-site estimates</li>
-          <li style="background:#fff;color:#2C5F2D;padding:6px 10px;border-radius:999px;border:1px solid rgba(0,0,0,0.04);">Licensed & insured</li>
-          <li style="background:#fff;color:#2C5F2D;padding:6px 10px;border-radius:999px;border:1px solid rgba(0,0,0,0.04);">Custom design & installation</li>
-        </ul>
-        <div style="margin-top:14px;font-size:14px;color:#444;">
-          <strong>Prefer to call?</strong>
-          <div style="font-weight:700;color:#8B6F47;margin-top:6px;">(555) 555-5555</div>
-        </div>
-      </div>
+        <p class="reveal-on-scroll" style="margin-bottom: 32px;">Ready to discuss your project? Send us your details and we will reach out to schedule a site visit.</p>
+        
+        <form id="quote-form" action="https://formsubmit.co/andrew@dnalandscapingco.com" method="POST" class="contact-form reveal-on-scroll">
+          <div class="form-group">
+            <input type="text" name="name" id="full-name" placeholder="Full Name *" required>
+          </div>
 
-      <form id="quote-form" class="contact-form reveal-on-scroll" action="https://formsubmit.co/andrew@dnalandscapingco.com" method="POST" style="background:#fff;padding:18px;border-radius:10px;border:1px solid rgba(0,0,0,0.04);">
-        <!-- FormSubmit hidden config -->
-        <input type="hidden" name="_cc" value="dennis@dnalandscapingco.com">
-        <input type="hidden" name="_subject" value="New DNA Landscaping Quote Request">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_honeypot" value="">
-        <input type="hidden" name="_next" value="https://www.dnalandscapingco.com/thanks">
+          <!-- Phone field added (optional) -->
+          <div class="form-group">
+            <input type="tel" name="phone" id="phone-number" placeholder="Phone (optional)" pattern="^[0-9+\-\s()]{7,}$" aria-describedby="phone-help">
+            <small id="phone-help" style="display:block; margin-top:6px; color:#6b6b6b; font-size:0.9rem;">Include area code. We'll only use this to call about your quote.</small>
+          </div>
 
-        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;">
-          <label style="display:block;">
-            <span style="display:block;font-size:13px;font-weight:600;color:#8B6F47;margin-bottom:6px;">Full name *</span>
-            <input name="name" type="text" placeholder="Jane Doe" required style="width:100%;padding:11px 12px;border-radius:8px;border:1px solid #e2e2e2;">
-          </label>
-
-          <label style="display:block;">
-            <span style="display:block;font-size:13px;font-weight:600;color:#8B6F47;margin-bottom:6px;">Email *</span>
-            <input name="email" type="email" placeholder="you@example.com" required style="width:100%;padding:11px 12px;border-radius:8px;border:1px solid #e2e2e2;">
-          </label>
-
-          <label style="display:block;">
-            <span style="display:block;font-size:13px;font-weight:600;color:#8B6F47;margin-bottom:6px;">Phone</span>
-            <input name="phone" type="tel" placeholder="(optional)" style="width:100%;padding:11px 12px;border-radius:8px;border:1px solid #e2e2e2;">
-          </label>
-
-          <label style="display:block;">
-            <span style="display:block;font-size:13px;font-weight:600;color:#8B6F47;margin-bottom:6px;">Service *</span>
-            <select name="service" required style="width:100%;padding:11px 12px;border-radius:8px;border:1px solid #e2e2e2;">
-              <option value="" disabled selected>Choose a service…</option>
+          <div class="form-group">
+            <input type="email" name="email" id="email-address" placeholder="Email Address *" required>
+          </div>
+          <div class="form-group">
+            <select name="service" id="service-type" required>
+              <option value="" disabled selected>Select Service Interest *</option>
               <option value="maintenance">Maintenance & Stewardship</option>
               <option value="hardscape">Hardscape & Paving</option>
-              <option value="planting">Planting & Establishment</option>
+              <option value="planting">Planting</option>
               <option value="drainage">Drainage Improvements</option>
               <option value="other">Other</option>
             </select>
-          </label>
+          </div>
+          <div class="form-group">
+            <textarea name="message" id="message" rows="4" placeholder="Tell us about your property and project goals *" required></textarea>
+          </div>
+          
+          <!-- Anti-spam & Config -->
+          <input type="hidden" name="_cc" value="dennis@dnalandscapingco.com">
+          <input type="hidden" name="_subject" value="New DNA Landscaping Quote Request">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="hidden" name="_honeypot">
+          <input type="hidden" name="_timeout" value="5000">
+          <input type="hidden" name="_next" value="https://dnalandscapingco.com">
 
-          <label style="display:block;grid-column:1 / -1;">
-            <span style="display:block;font-size:13px;font-weight:600;color:#8B6F47;margin-bottom:6px;">Project details *</span>
-            <textarea name="message" rows="4" placeholder="Address, scope, rough budget, timeline..." required style="width:100%;padding:11px 12px;border-radius:8px;border:1px solid #e2e2e2;"></textarea>
-          </label>
-        </div>
-
-        <div style="display:flex;gap:14px;align-items:center;margin-top:12px;flex-wrap:wrap;">
-          <button type="submit" style="display:inline-flex;align-items:center;gap:10px;background:#2C5F2D;color:#fff;border:none;padding:11px 16px;border-radius:10px;font-weight:700;cursor:pointer;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z" fill="#fff"/></svg>
-            Send Request
-          </button>
-          <p style="margin:0;color:#6b6b6b;font-size:13px;">We respect your privacy — no spam. Include area code in the phone.</p>
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
+          <button type="submit" class="btn btn-primary" style="width:100%; border:none;">Send Request</button>
+          
+          <!-- Success Message (Hidden by default) -->
+          <div id="form-success" class="form-success-message" style="display:none; margin-top:20px; padding:16px; background:#fff; border-left:4px solid var(--leaf); color:var(--forest);">
+             <strong>Thank you!</strong> Your request has been received. We will contact you shortly to schedule a consultation.
+          </div>
+        </form>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
