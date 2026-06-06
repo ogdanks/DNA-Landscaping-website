@@ -26,8 +26,30 @@
           <li><a class="contact-cta nav-link" href="#contact">Get a Quote</a></li>
         </ul>
       </nav>
+
+      <!-- Mobile menu button -->
+      <button class="mobile-menu-button" id="mobile-menu-button" aria-controls="mobile-nav" aria-expanded="false" aria-label="Open menu">
+        <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path class="ham-top" d="M3 7h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+          <path class="ham-mid" d="M3 12h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+          <path class="ham-btm" d="M3 17h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+      </button>
     </div>
   </header>
+
+  <!-- Mobile nav (hidden on desktop) -->
+  <nav id="mobile-nav" class="mobile-nav" aria-hidden="true" role="dialog" aria-label="Mobile navigation">
+    <div class="mobile-nav-inner">
+      <button class="mobile-close" id="mobile-close" aria-label="Close menu">&times;</button>
+      <ul>
+        <li><a href="#services" class="mobile-nav-link">Services</a></li>
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+        <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+        <li><a class="mobile-contact" href="#contact">Get a Quote</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <main>
     <section class="hero" aria-label="Hero">
@@ -124,18 +146,14 @@
       });
     })();
 
-    // Entrance animation: reveal-on-load for hero
+    // Entrance and reveal animations
     window.addEventListener('load', () => {
-      document.querySelectorAll('.reveal-on-load').forEach(el => {
-        el.classList.add('reveal');
-      });
+      document.querySelectorAll('.reveal-on-load').forEach(el => el.classList.add('reveal'));
     });
 
-    // Reveal on scroll for other content
     (function(){
       const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (prefersReduced) {
-        // Immediately show content if user prefers reduced motion
         document.querySelectorAll('.reveal-on-scroll').forEach(el => el.classList.add('reveal'));
         return;
       }
@@ -150,6 +168,70 @@
       }, {threshold: 0.12});
 
       document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+    })();
+
+    // Mobile menu: open/close, focus handling, Esc to close, and close on click outside
+    (function(){
+      const openClass = 'mobile-open';
+      const button = document.getElementById('mobile-menu-button');
+      const mobileNav = document.getElementById('mobile-nav');
+      const closeBtn = document.getElementById('mobile-close');
+      const focusableSelector = 'a, button';
+      let lastFocused = null;
+
+      function setOpen(isOpen){
+        button.setAttribute('aria-expanded', String(isOpen));
+        mobileNav.setAttribute('aria-hidden', String(!isOpen));
+        document.documentElement.classList.toggle(openClass, isOpen);
+
+        if (isOpen) {
+          lastFocused = document.activeElement;
+          // focus first focusable element inside mobile nav
+          const first = mobileNav.querySelector(focusableSelector);
+          if (first) first.focus();
+          // prevent background scroll
+          document.body.style.overflow = 'hidden';
+        } else {
+          // restore focus
+          if (lastFocused && lastFocused.focus) lastFocused.focus();
+          document.body.style.overflow = '';
+        }
+      }
+
+      button.addEventListener('click', () => setOpen(button.getAttribute('aria-expanded') !== 'true'));
+      closeBtn.addEventListener('click', () => setOpen(false));
+
+      // Close when clicking a link and then smooth scroll to section
+      mobileNav.querySelectorAll('.mobile-nav-link, .mobile-contact').forEach(a => {
+        a.addEventListener('click', (e) => {
+          const href = a.getAttribute('href');
+          // close first to reveal header then scroll
+          setOpen(false);
+          if (href && href.startsWith('#')) {
+            setTimeout(() => {
+              const target = document.querySelector(href);
+              if (target) {
+                const header = document.getElementById('site-header');
+                const y = target.getBoundingClientRect().top + window.pageYOffset - (header ? header.getBoundingClientRect().height : 0) - 18;
+                window.scrollTo({top: y, behavior: 'smooth'});
+              }
+            }, 240); // wait for close animation
+            e.preventDefault();
+          }
+        });
+      });
+
+      // Close on ESC
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && document.documentElement.classList.contains(openClass)) {
+          setOpen(false);
+        }
+      });
+
+      // Click outside the inner panel to close
+      mobileNav.addEventListener('click', (e) => {
+        if (e.target === mobileNav) setOpen(false);
+      });
     })();
   </script>
 </body>
