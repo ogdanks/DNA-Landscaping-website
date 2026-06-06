@@ -59,3 +59,8 @@ html.mobile-open .mobile-panel{transform: translateY(0);pointer-events:auto;}
   .hero-title{font-size:2rem;text-align:center}
   .hero-text{text-align:center}
 }
+
+/* Phone input - same visual treatment as other inputs */
+input[type="tel"] {
+  -webkit-text-security: none;
+}

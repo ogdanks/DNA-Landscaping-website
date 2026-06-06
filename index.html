@@ -139,18 +139,23 @@
         <h2 class="reveal-on-scroll">Request a Quote</h2>
         <p class="reveal-on-scroll" style="margin-bottom: 32px;">Ready to discuss your project? Send us your details and we will reach out to schedule a site visit.</p>
         
-        <form action="https://formsubmit.co/andrew@dnalandscapingco.com" method="POST" class="contact-form reveal-on-scroll">
+        <form id="quote-form" action="https://formsubmit.co/andrew@dnalandscapingco.com" method="POST" class="contact-form reveal-on-scroll">
           <div class="form-group">
-            <label for="full-name">Full Name</label>
-            <input type="text" name="name" id="full-name" placeholder="Name" required>
+            <input type="text" name="name" id="full-name" placeholder="Full Name *" required>
+          </div>
+
+          <!-- Phone field added (optional) -->
+          <div class="form-group">
+            <input type="tel" name="phone" id="phone-number" placeholder="Phone (optional)" pattern="^[0-9+\-\s()]{7,}$" aria-describedby="phone-help">
+            <small id="phone-help" style="display:block; margin-top:6px; color:#6b6b6b; font-size:0.9rem;">Include area code. We'll only use this to call about your quote.</small>
+          </div>
+
+          <div class="form-group">
+            <input type="email" name="email" id="email-address" placeholder="Email Address *" required>
           </div>
           <div class="form-group">
-            <label for="email-address">Email Address</label>
-            <input type="email" name="email" id="email-address" placeholder="email@example.com" required>
-          </div>
-          <div class="form-group">
-            <label for="service-type">Interest</label>
-            <select name="service" id="service-type">
+            <select name="service" id="service-type" required>
+              <option value="" disabled selected>Select Service Interest *</option>
               <option value="maintenance">Maintenance & Stewardship</option>
               <option value="hardscape">Hardscape & Paving</option>
               <option value="planting">Planting</option>
@@ -159,19 +164,24 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="message">Project Details</label>
-            <textarea name="message" id="message" rows="4" placeholder="Tell us about your property..." required></textarea>
+            <textarea name="message" id="message" rows="4" placeholder="Tell us about your property and project goals *" required></textarea>
           </div>
           
+          <!-- Anti-spam & Config -->
           <input type="hidden" name="_cc" value="dennis@dnalandscapingco.com">
           <input type="hidden" name="_subject" value="New DNA Landscaping Quote Request">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="true">
-          
-          <!-- Point back to your actual domain -->
+          <input type="hidden" name="_honeypot">
+          <input type="hidden" name="_timeout" value="5000">
           <input type="hidden" name="_next" value="https://dnalandscapingco.com">
-          
+
           <button type="submit" class="btn btn-primary" style="width:100%; border:none;">Send Request</button>
+          
+          <!-- Success Message (Hidden by default) -->
+          <div id="form-success" class="form-success-message" style="display:none; margin-top:20px; padding:16px; background:#fff; border-left:4px solid var(--leaf); color:var(--forest);">
+             <strong>Thank you!</strong> Your request has been received. We will contact you shortly to schedule a consultation.
+          </div>
         </form>
       </div>
     </section>
@@ -186,6 +196,8 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Scroll Offset Fix
     function scrollToTarget(targetId) {
       const target = document.getElementById(targetId);
       if (!target) return;
@@ -194,36 +206,54 @@
       const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 24;
       window.scrollTo({ top: offsetTop, behavior: 'smooth' });
     }
+
+    // Smooth Scroll for Nav Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
-        if (href && href.startsWith('#')) { e.preventDefault(); scrollToTarget(href.substring(1)); }
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          scrollToTarget(href.substring(1));
+        }
       });
     });
-    window.addEventListener('load', () => { document.querySelectorAll('.reveal-on-load').forEach(el => el.classList.add('reveal')); });
+
+    // Reveal Animations
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.reveal-on-load').forEach(el => el.classList.add('reveal'));
+    });
+
     (function(){
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) { entry.target.classList.add('reveal'); observer.unobserve(entry.target); }
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal');
+            observer.unobserve(entry.target);
+          }
         });
       }, { threshold: 0.1 });
       document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
     })();
+
+    // Mobile Menu Toggle
     (function(){
       const openClass = 'mobile-open';
       const button = document.getElementById('mobile-menu-button');
       const mobileNav = document.getElementById('mobile-nav');
       const overlay = document.getElementById('mobile-overlay');
       const closeBtn = document.getElementById('mobile-close');
+
       function setOpen(isOpen) {
         button.setAttribute('aria-expanded', String(isOpen));
         mobileNav.setAttribute('aria-hidden', String(!isOpen));
         document.documentElement.classList.toggle(openClass, isOpen);
         document.body.style.overflow = isOpen ? 'hidden' : '';
       }
+
       button.addEventListener('click', () => setOpen(button.getAttribute('aria-expanded') !== 'true'));
       closeBtn.addEventListener('click', () => setOpen(false));
       overlay.addEventListener('click', () => setOpen(false));
+      
       mobileNav.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', function(e) {
           const href = this.getAttribute('href');
@@ -233,6 +263,34 @@
             setTimeout(() => scrollToTarget(href.substring(1)), 260);
           }
         });
+      });
+    })();
+
+    // AJAX Form Submission with Inline Success
+    (function() {
+      const form = document.getElementById('quote-form');
+      const successMessage = document.getElementById('form-success');
+      if (!form || !successMessage) return;
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', form.action, true);
+        xhr.setRequestHeader('Accept', 'application/json');
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+              form.reset();
+              form.style.display = 'none';
+              successMessage.style.display = 'block';
+            } else {
+              alert('There was a problem submitting your form. Please try again.');
+            }
+          }
+        };
+        xhr.send(formData);
       });
     })();
   </script>
