@@ -12,7 +12,7 @@
   <link rel="icon" href="dna_landscaping_brand_assets/logos/dna_favicon.ico" type="image/x-icon" />
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" id="site-header">
     <div class="container header-row">
       <a class="brand" href="/" aria-label="DNA Landscaping Home">
         <img class="logo" src="dna_landscaping_brand_assets/logos/dna_primary_horizontal_200.png" alt="DNA Landscaping">
@@ -20,10 +20,10 @@
 
       <nav class="main-nav" aria-label="Main navigation">
         <ul>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a class="contact-cta" href="#contact">Get a Quote</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a class="contact-cta nav-link" href="#contact">Get a Quote</a></li>
         </ul>
       </nav>
     </div>
@@ -32,8 +32,8 @@
   <main>
     <section class="hero" aria-label="Hero">
       <div class="hero-inner container">
-        <div class="hero-text">
-          <h1 class="hero-title">Landscapes that flourish, by design.</h1>
+        <div class="hero-text reveal-on-load">
+          <h1 class="hero-title" data-text="Landscapes that flourish, by design.">Landscapes that flourish, by design.</h1>
           <p class="hero-sub">Precision planning. Expert execution. Lasting beauty.</p>
           <div class="hero-ctas">
             <a class="btn btn-primary" href="#contact">Request a Quote</a>
@@ -45,29 +45,46 @@
 
     <section id="services" class="content-section">
       <div class="container narrow">
-        <h2>Our Services</h2>
-        <p>Design, installation, irrigation, and maintenance—rooted in horticultural science and executed with craftsmanship.</p>
+        <h2 class="reveal-on-scroll">Our Services</h2>
+        <p class="reveal-on-scroll">Design, installation, irrigation, and maintenance—rooted in horticultural science and executed with craftsmanship.</p>
+
+        <div class="service-cards" aria-label="Service offerings">
+          <article class="service-card reveal-on-scroll" tabindex="0">
+            <h3>Design</h3>
+            <p>Site analysis, concept plans, planting palettes tailored to microclimates.</p>
+          </article>
+
+          <article class="service-card reveal-on-scroll" tabindex="0">
+            <h3>Installation</h3>
+            <p>Precision installation—from hardscapes to planting and irrigation systems.</p>
+          </article>
+
+          <article class="service-card reveal-on-scroll" tabindex="0">
+            <h3>Maintenance</h3>
+            <p>Seasonal programs that protect investment and promote long-term vitality.</p>
+          </article>
+        </div>
       </div>
     </section>
 
     <section id="projects" class="content-section bg-soft">
       <div class="container narrow">
-        <h2>Selected Projects</h2>
-        <p>Curated examples of recent work to showcase our approach and attention to detail.</p>
+        <h2 class="reveal-on-scroll">Selected Projects</h2>
+        <p class="reveal-on-scroll">Curated examples of recent work to showcase our approach and attention to detail.</p>
       </div>
     </section>
 
     <section id="about" class="content-section">
       <div class="container narrow">
-        <h2>About DNA Landscaping</h2>
-        <p>We build outdoor spaces optimized for your site—sustainable, beautiful, and low-maintenance.</p>
+        <h2 class="reveal-on-scroll">About DNA Landscaping</h2>
+        <p class="reveal-on-scroll">We build outdoor spaces optimized for your site—sustainable, beautiful, and low-maintenance.</p>
       </div>
     </section>
 
     <section id="contact" class="content-section bg-accent">
       <div class="container narrow">
-        <h2>Contact</h2>
-        <p>Ready to discuss your project? Request a site visit and personalized estimate.</p>
+        <h2 class="reveal-on-scroll">Contact</h2>
+        <p class="reveal-on-scroll">Ready to discuss your project? Request a site visit and personalized estimate.</p>
         <p><a class="btn btn-primary" href="mailto:info@example.com">Email Us</a></p>
       </div>
     </section>
@@ -81,7 +98,59 @@
   </footer>
 
   <script>
+    // Set year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth scroll with offset for sticky header
+    (function(){
+      const header = document.getElementById('site-header');
+      const headerHeight = () => header ? header.getBoundingClientRect().height : 0;
+
+      function scrollToHash(el) {
+        const y = el.getBoundingClientRect().top + window.pageYOffset - headerHeight() - 18; // extra gap
+        window.scrollTo({top: y, behavior: 'smooth'});
+      }
+
+      document.querySelectorAll('a.nav-link').forEach(a => {
+        a.addEventListener('click', function(e){
+          const href = this.getAttribute('href');
+          if (!href || !href.startsWith('#')) return;
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            scrollToHash(target);
+          }
+        });
+      });
+    })();
+
+    // Entrance animation: reveal-on-load for hero
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.reveal-on-load').forEach(el => {
+        el.classList.add('reveal');
+      });
+    });
+
+    // Reveal on scroll for other content
+    (function(){
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) {
+        // Immediately show content if user prefers reduced motion
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => el.classList.add('reveal'));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {threshold: 0.12});
+
+      document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+    })();
   </script>
 </body>
 </html>
