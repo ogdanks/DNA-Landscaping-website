@@ -1,4 +1,4 @@
-/* Minimalist-Chic Brand Styles (No Badges, Only Horizontal Logo) */
+/* Enhanced Visual Impact Styles */
 
 :root{
   --forest: #2C5F2D;
@@ -33,72 +33,127 @@ body{
 .narrow{max-width:760px;margin-left:auto;margin-right:auto}
 
 /* Header */
-.site-header{position:sticky;top:0;background:rgba(255,255,255,0.92);backdrop-filter:blur(6px);box-shadow:0 2px 8px rgba(0,0,0,0.05);z-index:40;padding:var(--space-sm) 0}
-.logo-main{height:58px;display:block}
+.site-header{
+  position:sticky;top:0;background:rgba(255,255,255,0.94);
+  backdrop-filter:blur(8px);box-shadow:0 4px 12px rgba(0,0,0,0.06);z-index:40;padding:var(--space-sm) 0
+}
+.logo-main{height:60px;display:block}
 
 /* Hero */
 .hero{
   background-image: url('dna_landscaping_brand_assets/web_optimized/hero_1600.jpg');
   background-size:cover;background-position:center;
-  position:relative;padding:100px 0 100px;
+  position:relative;padding:110px 0 110px;
   display:flex;align-items:center;justify-content:center;
-  min-height:70vh;
+  min-height:74vh;
 }
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0.2));}
-.hero-content{position:relative;z-index:2;text-align:center;color:var(--white);max-width:840px;margin:0 auto;padding:0 var(--space-md)}
+.hero::after{
+  content:"";
+  position:absolute;inset:0;
+  background: linear-gradient(180deg, rgba(44,95,45,0.45), rgba(40,80,40,0.3));
+}
+.hero-content{
+  position:relative;z-index:2;text-align:center;color:var(--white);
+  max-width:860px;margin:0 auto;padding:0 var(--space-md)
+}
 .hero-title{
-  font-family:"Montserrat",sans-serif;font-weight:700;font-size:2.1rem;margin-bottom:var(--space-sm);
-  color:var(--white);text-shadow:0 4px 16px rgba(0,0,0,0.4);
+  font-family:"Montserrat",sans-serif;font-weight:800;font-size:2.3rem;
+  margin-bottom:var(--space-sm);color:var(--white);
+  text-shadow:0 6px 18px rgba(0,0,0,0.42);
+  letter-spacing:-0.02em;
 }
 .hero-lead{
-  font-size:1.15rem;margin-bottom:var(--space-md);max-width:700px;margin-left:auto;margin-right:auto;
-  color:rgba(255,255,255,0.96);text-shadow:0 2px 8px rgba(0,0,0,0.3);
+  font-size:1.2rem;margin-bottom:var(--space-md);
+  color:rgba(255,255,255,0.96);text-shadow:0 3px 10px rgba(0,0,0,0.32);
+  max-width:720px;margin-left:auto;margin-right:auto;
 }
 
 /* CTAs */
-.cta-row{display:flex;gap:var(--space-sm);justify-content:center;flex-wrap:wrap;margin-top:var(--space-xs)}
+.cta-row{
+  display:flex;gap:var(--space-sm);justify-content:center;flex-wrap:wrap;margin-top:var(--space-xs)
+}
 .btn{
-  display:inline-block;padding:12px 24px;border-radius:var(--radius);font-weight:600;text-decoration:none;cursor:pointer;
-  transition:all 0.24s ease-out;font-family:"Montserrat",sans-serif;text-transform:uppercase;letter-spacing:0.5px;
+  display:inline-block;padding:14px 28px;border-radius:var(--radius);
+  font-weight:600;text-decoration:none;cursor:pointer;
+  transition:all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  font-family:"Montserrat",sans-serif;text-transform:uppercase;
+  letter-spacing:1px;font-size:0.9rem;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
 }
 .btn-primary{
-  background:var(--forest);color:var(--white);box-shadow:0 8px 18px rgba(44,95,45,0.18);
+  background:var(--forest);color:var(--white);
+  border: 2px solid transparent;
 }
 .btn-primary:hover{
-  transform:translateY(-3px);background:#234725;box-shadow:0 10px 22px rgba(44,95,45,0.24);
+  transform:translateY(-4px);
+  background:var(--leaf);
+  box-shadow: 0 10px 24px rgba(44,95,45,0.3);
 }
 .btn-outline{
-  background:transparent;border:2px solid rgba(255,255,255,0.22);color:var(--white);
+  background:transparent;border:2px solid rgba(255,255,255,0.3);color:var(--white);
 }
 .btn-outline:hover{
-  background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.4);
+  background:rgba(255,255,255,0.12);
+  border-color:var(--leaf);
+  transform:translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Leaf Divider */
+.divider{
+  text-align:center;padding:var(--space-lg) 0;
+  position:relative;z-index:1;
+}
+.leaf-icon{
+  font-size:1.8rem;color:var(--leaf);
+  opacity:0.7;
 }
 
 /* Content Sections */
-.content-section{padding:var(--space-xl) 0}
-.content-section h2{
-  font-family:"Montserrat",sans-serif;margin-bottom:var(--space-xs);font-size:1.4rem;color:var(--char);
+.content-section{
+  padding:var(--space-xl) 0;
+  border-left: 4px solid transparent;
+  transition:border-color 0.4s ease;
 }
-.content-section p{color:var(--char);opacity:0.92;margin-bottom:var(--space-md)}
+.content-section.accented{
+  border-left-color: var(--leaf);
+}
+.content-section h2{
+  font-family:"Montserrat",sans-serif;margin-bottom:var(--space-xs);
+  font-size:1.5rem;color:var(--char);
+}
+.content-section p{
+  color:var(--char);opacity:0.94;margin-bottom:var(--space-md);
+  font-size:1.05rem;
+}
 
 /* Footer */
-.site-footer{background:var(--forest);color:var(--white);padding:var(--space-md) 0;margin-top:var(--space-lg)}
+.site-footer{
+  background:var(--forest);color:var(--white);
+  padding:var(--space-md) 0;margin-top:var(--space-lg);
+}
 .footer-row{text-align:center}
 .copyright{font-size:0.95rem}
 
 /* Accessibility focus */
-a:focus, button:focus { outline:3px solid rgba(151,188,98,0.25); outline-offset:3px; }
+a:focus, button:focus {
+  outline:3px solid rgba(151,188,98,0.4);
+  outline-offset:3px;
+}
 
 /* Responsive */
 @media (max-width:860px){
-  .hero-title{font-size:1.8rem}
-  .hero-lead{font-size:1.05rem}
-  .btn{padding:10px 20px}
+  .hero-title{font-size:1.9rem}
+  .hero-lead{font-size:1.1rem}
+  .btn{padding:12px 22px}
 }
 @media (max-width:520px){
-  .hero{padding:72px 0}
-  .hero-title{font-size:1.5rem}
+  .hero{padding:80px 0}
+  .hero-title{font-size:1.6rem}
   .hero-lead{font-size:1rem}
   .cta-row{flex-direction:column;align-items:center}
   .btn{width:100%;max-width:300px}
+  .content-section{
+    padding:var(--space-lg) var(--space-md);
+  }
 }
