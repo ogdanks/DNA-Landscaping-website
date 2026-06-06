@@ -1,4 +1,4 @@
-/* DNA Landscaping - Mobile menu + existing styles */
+/* DNA Landscaping - Mobile slide-down menu with dim overlay + existing styles */
 
 /* Tokens */
 :root{
@@ -48,25 +48,36 @@ body{
 }
 .mobile-menu-button:focus{outline:3px solid rgba(127,191,90,0.18); outline-offset:3px}
 
-/* Mobile nav (slide-down full-screen) */
+/* Mobile nav container: contains overlay + panel */
 .mobile-nav{
-  position:fixed;inset:0;top:-100vh;left:0;right:0;z-index:200;
-  background:var(--white);display:flex;align-items:flex-start;justify-content:center;
-  transition: transform 360ms cubic-bezier(.2,.9,.2,1), opacity 240ms ease;
-  transform: translateY(-100%);
-  opacity:0;
-  will-change: transform, opacity;
+  position:fixed;inset:0;left:0;right:0;top:0;bottom:0;z-index:200;pointer-events:none;
+  display:block;
 }
-.mobile-nav[aria-hidden="false"]{ transform: translateY(0); opacity:1; top:0; }
-.mobile-nav-inner{width:100%;max-width:640px;padding:34px 28px}
+.mobile-overlay{
+  position:absolute;inset:0;background:rgba(0,0,0,0.0);opacity:0;transition:opacity 300ms ease;
+  pointer-events:none;
+}
+/* Mobile panel slides from top */
+.mobile-panel{
+  position:fixed;left:0;right:0;top:0;
+  transform: translateY(-100%); transition: transform 360ms cubic-bezier(.2,.9,.2,1);
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.98));
+  box-shadow:0 22px 60px rgba(2,20,10,0.28);
+  will-change: transform;
+}
+.mobile-panel-inner{max-width:640px;margin:0 auto;padding:28px 20px;position:relative}
 .mobile-close{
-  background:transparent;border:0;font-size:36px;line-height:1;color:var(--char);position:absolute;top:18px;right:18px;padding:6px;border-radius:6px;
+  background:transparent;border:0;font-size:36px;line-height:1;color:var(--char);position:absolute;top:12px;right:12px;padding:6px;border-radius:6px;
 }
-.mobile-nav ul{list-style:none;padding-top:28px;display:flex;flex-direction:column;gap:18px}
-.mobile-nav a{display:block;font-family:"Montserrat",sans-serif;font-size:1.15rem;text-decoration:none;color:var(--char);padding:12px 8px;border-radius:6px}
+.mobile-panel ul{list-style:none;padding-top:20px;display:flex;flex-direction:column;gap:18px}
+.mobile-panel a{display:block;font-family:"Montserrat",sans-serif;font-size:1.15rem;text-decoration:none;color:var(--char);padding:12px 8px;border-radius:6px}
 .mobile-contact{background:var(--leaf-strong);color:var(--white);padding:10px 14px;border-radius:8px;display:inline-block;width:fit-content}
 
-/* When mobile menu is open, hide desktop nav for accessibility */
+/* When mobile is open: show overlay (opaque) and drop panel to 0 */
+html.mobile-open .mobile-overlay{opacity:0.46;pointer-events:auto;background:rgba(0,0,0,0.46)}
+html.mobile-open .mobile-panel{transform: translateY(0);}
+
+/* Hide desktop nav when mobile is open for screen readers */
 html.mobile-open .main-nav{display:none}
 
 /* Hero */
