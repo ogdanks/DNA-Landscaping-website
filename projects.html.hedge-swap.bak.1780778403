@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <meta name="description" content="View our portfolio of stone masonry, foundations, and privacy hedge sculpting projects across Westborough and Central Massachusetts.">
-  <meta property="og:title" content="DNA Landscaping Project Portfolio">
-  <meta property="og:description" content="See why Massachusetts homeowners trust DNA Landscaping for high-end masonry and hedge work.">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | DNA Landscaping</title>
@@ -109,7 +103,9 @@
           <h2>Stone Masonry & Foundations</h2>
           <div class="project-images">
             <!-- Stone images -->
+            <img src="assets/images/projects/IMG_20260606_150510.jpg" alt="Stone masonry detail">
             <img src="assets/images/projects/IMG_20260606_150422.jpg" alt="Foundation work">
+            <img src="assets/images/projects/IMG_20260606_150509.jpg" alt="Stone pathway">
           </div>
         </div>
 
@@ -120,8 +116,6 @@
             <!-- Hedge images -->
             <img src="assets/images/projects/IMG_20260606_150510 (1).jpg" alt="Hedge sculpting detail">
             <img src="assets/images/projects/IMG_20260606_150510 (2).jpg" alt="Finished hedge">
-            <img src="assets/images/projects/IMG_20260606_150510.jpg" alt="Hedge — detail">
-            <img src="assets/images/projects/IMG_20260606_150509.jpg" alt="Hedge — pathway">
           </div>
         </div>
 

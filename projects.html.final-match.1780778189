@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <meta name="description" content="View our portfolio of stone masonry, foundations, and privacy hedge sculpting projects across Westborough and Central Massachusetts.">
-  <meta property="og:title" content="DNA Landscaping Project Portfolio">
-  <meta property="og:description" content="See why Massachusetts homeowners trust DNA Landscaping for high-end masonry and hedge work.">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | DNA Landscaping</title>
@@ -39,6 +33,88 @@
 
     /* Small visual polish for headings */
     .project h2 { margin-top: 32px; }
+  </style>
+  <style id="hero-fix">
+
+    .hero.bg-accent,
+
+    .hero.bg-accent h1,
+
+    .hero.bg-accent p {
+
+      background: #2C5F2D !important;
+
+      color: #ffffff !important;
+
+      opacity: 1 !important;
+
+      text-shadow: none !important;
+
+      filter: none !important;
+
+      mix-blend-mode: normal !important;
+
+      font-weight: bold !important;
+
+    }
+
+  </style>
+  <style id="isolated-hero-styles">
+
+    #projects-hero {
+
+      background-color: #2C5F2D !important;
+
+      padding: 80px 20px !important;
+
+      text-align: center !important;
+
+      position: relative !important;
+
+      z-index: 1 !important;
+
+    }
+
+    #projects-hero h1,
+
+    #projects-hero p {
+
+      color: #ffffff !important;
+
+      opacity: 1 !important;
+
+      text-shadow: none !important;
+
+      filter: none !important;
+
+      mix-blend-mode: normal !important;
+
+      font-weight: 800 !important;
+
+      position: relative !important;
+
+      z-index: 2 !important;
+
+    }
+
+    #projects-hero h1 {
+
+      font-size: 3rem !important;
+
+      margin-bottom: 12px !important;
+
+    }
+
+    #projects-hero p {
+
+      font-size: 1.25rem !important;
+
+      max-width: 700px;
+
+      margin: 0 auto !important;
+
+    }
+
   </style>
 </head>
 <body>
@@ -85,20 +161,11 @@
   </div>
 
   <main>
-    <section class="hero" aria-label="Hero">
-
-      <div class="hero-inner container">
-
-        <div class="hero-text reveal-on-load">
-
-          <h1 class="hero-title" data-text="Our Projects">Our Projects</h1>
-
-          <p class="hero-sub">Explore our portfolio of stunning landscape designs and transformations.</p>
-
-        </div>
-
+    <section id="projects-hero" class="hero bg-accent">
+      <div class="container narrow text-center">
+        <h1>Our Projects</h1>
+        <p>Explore our portfolio of stunning landscape designs and transformations.</p>
       </div>
-
     </section>
 
     <section class="content-section">
@@ -109,7 +176,9 @@
           <h2>Stone Masonry & Foundations</h2>
           <div class="project-images">
             <!-- Stone images -->
+            <img src="assets/images/projects/IMG_20260606_150510.jpg" alt="Stone masonry detail">
             <img src="assets/images/projects/IMG_20260606_150422.jpg" alt="Foundation work">
+            <img src="assets/images/projects/IMG_20260606_150509.jpg" alt="Stone pathway">
           </div>
         </div>
 
@@ -120,8 +189,6 @@
             <!-- Hedge images -->
             <img src="assets/images/projects/IMG_20260606_150510 (1).jpg" alt="Hedge sculpting detail">
             <img src="assets/images/projects/IMG_20260606_150510 (2).jpg" alt="Finished hedge">
-            <img src="assets/images/projects/IMG_20260606_150510.jpg" alt="Hedge — detail">
-            <img src="assets/images/projects/IMG_20260606_150509.jpg" alt="Hedge — pathway">
           </div>
         </div>
 
@@ -157,17 +224,6 @@
       closeBtn.addEventListener('click', () => setOpen(false));
       overlay.addEventListener('click', () => setOpen(false));
     })();
-  </script>
-  <script>
-
-    // Reveal Animations
-
-    window.addEventListener("load", () => {
-
-      document.querySelectorAll(".reveal-on-load").forEach((el) => el.classList.add("reveal"));
-
-    });
-
   </script>
 </body>
 </html>
