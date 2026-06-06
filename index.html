@@ -22,7 +22,7 @@
         <ul>
           <li><a href="#services" class="nav-link">Services</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#standards" class="nav-link">Standards</a></li>
           <li><a class="contact-cta nav-link" href="#contact">Get a Quote</a></li>
         </ul>
       </nav>
@@ -45,7 +45,7 @@
         <ul>
           <li><a href="#services" class="mobile-nav-link">Services</a></li>
           <li><a href="#about" class="mobile-nav-link">About</a></li>
-          <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+          <li><a href="#standards" class="mobile-nav-link">Standards</a></li>
           <li><a class="mobile-contact" href="#contact">Get a Quote</a></li>
         </ul>
       </div>
@@ -109,35 +109,35 @@
       </div>
     </section>
 
-    <section id="about" class="content-section bg-soft">
+    <section id="standards" class="content-section bg-soft">
+      <div class="container narrow">
+        <h2 class="reveal-on-scroll">Professional Standards & Reliability</h2>
+        <p class="reveal-on-scroll" style="margin-bottom: 32px;">Over 30 years of experience has taught us that how we treat your property is just as important as the services we perform. We hold ourselves to a veteran standard of landscape stewardship.</p>
+        
+        <div class="service-cards" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+           <div class="reveal-on-scroll" style="border-left: 4px solid var(--leaf); padding-left: 20px;">
+              <h4 style="font-family:'Montserrat'; color:var(--forest); margin-bottom:10px;">Property Respect</h4>
+              <p>We treat every yard as if it were our own. This means leaving every site cleaner than we found it, closing gates, and respecting your privacy and neighbors.</p>
+           </div>
+           <div class="reveal-on-scroll" style="border-left: 4px solid var(--leaf); padding-left: 20px;">
+              <h4 style="font-family:'Montserrat'; color:var(--forest); margin-bottom:10px;">Clear Communication</h4>
+              <p>No more wondering when the crew will arrive. We provide clear scheduling and respond to all inquiries within 24 hours.</p>
+           </div>
+           <div class="reveal-on-scroll" style="border-left: 4px solid var(--leaf); padding-left: 20px;">
+              <h4 style="font-family:'Montserrat'; color:var(--forest); margin-bottom:10px;">Transparent Estimates</h4>
+              <p>We provide honest, practical pricing with no hidden fees. We prioritize long-term soil and plant health over quick, temporary fixes.</p>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="content-section">
       <div class="container narrow">
         <h2 class="reveal-on-scroll">30 Years of Hands-On Experience</h2>
         <p class="reveal-on-scroll" style="font-size: 1.15rem; margin-bottom: 24px;"><strong>At DNA Landscaping, we believe that longevity is the ultimate mark of quality.</strong></p>
         <p class="reveal-on-scroll">Established with a focus on durability and stewardship, we have spent over 30 years mastering the practical science of landscape maintenance. Our knowledge isn't just from books—it comes from three decades of working directly with the unique soil, climate, and plant life of our region.</p>
         
         <p class="reveal-on-scroll">We understand that a landscape is a living investment. Our approach is built on consistency, attention to detail, and the kind of problem-solving that only comes from years in the field. When we manage a property, we aren't just cutting grass; we are acting as long-term stewards of your outdoor space, ensuring it matures beautifully and stays functional through every season.</p>
-
-        <div class="service-cards" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top: 48px;">
-           <div class="reveal-on-scroll" style="text-align: center;">
-              <h4 style="font-family:'Montserrat'; color:var(--forest); margin-bottom:10px;">Reliability</h4>
-              <p>Thirty years of consistent service means we show up when we say we will and we stand by our work.</p>
-           </div>
-           <div class="reveal-on-scroll" style="text-align: center;">
-              <h4 style="font-family:'Montserrat'; color:var(--forest); margin-bottom:10px;">Practicality</h4>
-              <p>We prioritize solutions that work for your specific site, emphasizing drainage and soil health as the foundation.</p>
-           </div>
-           <div class="reveal-on-scroll" style="text-align: center;">
-              <h4 style="font-family:'Montserrat'; color:var(--forest); margin-bottom:10px;">Partnership</h4>
-              <p>We treat every yard as if it were our own, building long-term relationships through honest advice and hard work.</p>
-           </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="content-section">
-      <div class="container narrow">
-        <h2 class="reveal-on-scroll">Selected Projects</h2>
-        <p class="reveal-on-scroll">Curated examples of recent work to showcase our approach and attention to detail.</p>
       </div>
     </section>
 
@@ -160,35 +160,25 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Smooth scroll accounting for sticky header
-    (function() {
-      function scrollToTarget(targetId) {
-        const target = document.getElementById(targetId);
-        if (!target) return;
+    function scrollToTarget(targetId) {
+      const target = document.getElementById(targetId);
+      if (!target) return;
+      const header = document.getElementById('site-header');
+      const headerHeight = header ? header.getBoundingClientRect().height : 0;
+      const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 24;
+      window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+    }
 
-        const header = document.getElementById('site-header');
-        const headerHeight = header ? header.getBoundingClientRect().height : 0;
-        const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 24; // 24px buffer
-
-        window.scrollTo({
-          top: offsetTop,
-          behavior: 'smooth'
-        });
-      }
-
-      // Handle clicks on nav links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          const href = this.getAttribute('href');
-          if (href && href.startsWith('#')) {
-            e.preventDefault();
-            scrollToTarget(href.substring(1));
-          }
-        });
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          scrollToTarget(href.substring(1));
+        }
       });
-    })();
+    });
 
-    // Entrance animations
     window.addEventListener('load', () => {
       document.querySelectorAll('.reveal-on-load').forEach(el => el.classList.add('reveal'));
     });
@@ -205,7 +195,6 @@
       document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
     })();
 
-    // Mobile menu toggle
     (function(){
       const openClass = 'mobile-open';
       const button = document.getElementById('mobile-menu-button');
@@ -224,14 +213,13 @@
       closeBtn.addEventListener('click', () => setOpen(false));
       overlay.addEventListener('click', () => setOpen(false));
       
-      // Close menu on link click and scroll to section
       mobileNav.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', function(e) {
           const href = this.getAttribute('href');
           if (href && href.startsWith('#')) {
             e.preventDefault();
             setOpen(false);
-            setTimeout(() => scrollToTarget(href.substring(1)), 260); // Wait for menu close animation
+            setTimeout(() => scrollToTarget(href.substring(1)), 260);
           }
         });
       });
