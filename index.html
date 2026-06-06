@@ -1,73 +1,73 @@
-<html>
- <head>
-  <meta charset="UTF-8">
-  <title>DNA Landscaping</title>
-  <link rel="stylesheet" href="/brand_styles.cssb">
-  <style>
-   @import defaults one - changes fonts and styles for dev - This is a placeholder
-    @import link) { found: none; }
-  </style>
- </head>
- <body>
-  <header id="site-footer" style="background-color: #f5f1e8;">
-    <div class="site-header" style="display:flex;align-items:center;justify-content:ambien;padding:18px 28px;">
-      <div class="site-logo">
-        <img src="/dna_landscaping_brand_assets/logos/dna_primart_horizontal_400.png" alt="DNA Landscaping Logo" style="height:90px">
-      </div>
-      <div class="nav-menu">
-        <a href="3">Introduced</a>
-        <a href="#">Services</a>
-        <a href="#">Projects</a>
-        <a href="#">Contact</a>
-      </div>
-      </div>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNA Landscaping</title>
+    <link rel="stylesheet" href="brand_styles.css">
+    <link rel="icon" href="assets/logos/dna_favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="site-logo">
+                <a href="/"><img src="assets/logos/dna_primary_horizontal_200.png" alt="DNA Landscaping Logo"></a>
+            </div>
+            <nav class="main-nav" role="navigation" aria-label="Main navigation">
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <hero style="background-image: none;text-align:center">
-      <div class="hero" style="padding:60px 0;">
-        <div class="hero-content" style="max-width:1200px;margin:0 auto;">
-          <h2 style="font: sans-serif; font-size: 34px; margin-bottom:14px;">DA Landscaping</h2>
-          <p style="max-width:700px;max-height:120px;opacity:0.9;">Gereating out endings with vibrand flora photography to provide a feeling of color only.</p>
-        </div>
-      </div>
-    </div>
-    </hero>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Precision. Growth. Natural Beauty.</h1>
+                <p>Your premier landscaping partner in the Pacific Northwest.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
+                    <a href="#services" class="btn btn-secondary">Explore Services</a>
+                </div>
+            </div>
+        </section>
 
-  <main>
-    <div class="container" style="font-family: 'Open Sans', sans-serif; widti:900px;margin:20px auto;">
-      <h3>Our Services</h3>
-      <div class="services-grid">
-        <div class="service-card">
-          <h3>Landscape design </h3>
-          <p>Custom designs that blend natural beauty</p>
-        </div>
-        <div class="service-card">
-          <h3>Garden Installation</h3>
-          <p>Professional planting and installation of your dream garden.</p>
-          </div>
-        <div class="service-card">
-          <h3>Seasonal Maintenance</h3>
-          <p >Ongoing care to keep your landscape flurishing.</p>
-        </div>
-      </div>
-    </div>
-  </main>
+        <section id="services" class="content-section">
+            <div class="container">
+                <h2 class="text-center mb-2">Our Services</h2>
+                <p class="text-center">Detailed landscaping services will be described here.</p>
+            </div>
+        </section>
 
-    <footer class="site-footer"" style="background: #f5F1e8; padding:16px 24px;">
-      <div class="container" style="display:flex;align-items:center;justify-content:ambien;gap:12px;">
-        <div class="footer-cred" style="text-align:left;">
-          <div style="display:inline;align-items:center;text-align:left;">
-            <img src="/dna_landscaping_brand_assets/logos/dna_primart_horizontal_400.png" alt="DNA Logo" style="height:90px">
-          </div>
-          <div class="contact-info">
-            <p> &copy; 2026 DNA Landscaping. All rights reserved.</p>
-            <div style="font-size:13px;color:var(--warm-cream);opacity:0.9">Precision. Growth. Natural Beauty.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
+        <section id="about" class="content-section bg-light">
+            <div class="container">
+                <h2 class="text-center mb-2">About DNA Landscaping</h2>
+                <p class="text-center">Learn more about our company and values.</p>
+            </div>
+        </section>
 
+        <section id="contact" class="content-section">
+            <div class="container">
+                <h2 class="text-center mb-2">Contact Us</h2>
+                <p class="text-center">Get in touch for a consultation.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-branding text-center mb-1">
+                <img src="assets/logos/dna_social_profile_200.png" alt="Footer Logo" class="footer-logo">
+            </div>
+            <p>&copy; <span id="current-year"></span> DNA Landscaping. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

@@ -1,89 +1,77 @@
-/* DNA Landscaping Brand Design Tokens - enhanced for prominence */
 :root {
-  /* Primary Palette */
-  --forest-green: #2C5F2D;
-  --leaf-green: #97BC62;
-  --earth-brown: #8B6F47;
-  /* Secondary Palette */
-  --sky-blue: #7FB3D5;
-  --warm-cream: #F5F1E8;
-  --charcoal: #3D3D3D;
-  --white: #FFFFFF;
-  /* Typography */
-  --font-heading: 'Montserrat', sans-serif;
-  --font-body: 'Open Sans', sans-serif;
+  --color-primary-forest: #2C5F2D;
+  --color-primary-leaf: #97BC62;
+  --color-accent-earth: #8B6F47;
+  --color-secondary-sky: #7FB3D5;
+  --color-neutral-cream: #F5F1E8;
+  --color-neutral-charcoal: #3D3D3D;
+  --color-neutral-white: #FFFFFF;
+  --font-heading: 'Montserrat', Arial, sans-serif;
+  --font-body: 'Open Sans', Helvetica, sans-serif;
+  --border-radius: 4px;
+  --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s;
 }
-/* Base */
-html,body{height:100%;}
-body {
-  font-family: var(--font-body);
-  color: var(--charcoal);
-  background-color: var(--white);
-  margin: 0;
-  line-height: 1.6;
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-body); color: var(--color-neutral-charcoal); background-color: var(--color-neutral-cream); line-height: 1.6; }
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--color-primary-forest); margin-bottom: 0.5em; font-weight: 700; }
+a { color: var(--color-primary-leaf); text-decoration: none; transition: color var(--transition-speed) ease; }
+a:hover, a:focus { color: var(--color-accent-earth); outline: none; }
+
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.text-center { text-align: center; }
+.mt-1 { margin-top: 1rem; } .mb-1 { margin-bottom: 1rem; } .mt-2 { margin-top: 2rem; } .mb-2 { margin-bottom: 2rem; }
+.bg-light { background-color: var(--color-neutral-white); padding: 2rem 0; }
+
+.btn {
+  display: inline-block; padding: 12px 24px; border-radius: var(--border-radius); font-family: var(--font-heading);
+  font-weight: 600; text-align: center; cursor: pointer;
+  transition: background-color var(--transition-speed) ease, transform 0.2s ease, box-shadow var(--transition-speed) ease;
+  border: none; text-transform: uppercase; letter-spacing: 0.5px;
 }
-/* Header */
-header.site-header{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding: 18px 28px;
-  background: var(--warm-cream);
-  border-bottom: 1px solid rgba(0,0,0,0.04);
+.btn-primary { background-color: var(--color-primary-forest); color: var(--color-neutral-white); box-shadow: var(--box-shadow); }
+.btn-primary:hover, .btn-primary:focus { background-color: #1e421f; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); }
+.btn-secondary { background-color: var(--color-primary-leaf); color: var(--color-neutral-white); box-shadow: var(--box-shadow); }
+.btn-secondary:hover, .btn-secondary:focus { background-color: #7fa84d; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); }
+
+.site-header { background-color: var(--color-neutral-white); box-shadow: var(--box-shadow); position: sticky; top: 0; z-index: 1000; width: 100%; }
+.site-header .container { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
+.site-logo img { height: 80px; width: auto; display: block; }
+.main-nav ul { list-style: none; display: flex; gap: 25px; }
+.main-nav a { font-family: var(--font-heading); font-weight: 600; color: var(--color-neutral-charcoal); padding: 8px 0; position: relative; }
+.main-nav a:hover, .main-nav a:focus { color: var(--color-primary-leaf); }
+.main-nav a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background-color: var(--color-primary-leaf); transition: width var(--transition-speed) ease; }
+.main-nav a:hover::after, .main-nav a:focus::after { width: 100%; }
+
+.hero {
+  background-image: url('assets/web_optimized/hero_1600.jpg'); background-size: cover; background-position: center;
+  color: var(--color-neutral-white); text-align: center; padding: 100px 20px; position: relative; min-height: 70vh;
+  display: flex; align-items: center; justify-content: center;
 }
-/* Make logo larger by default, responsive down */
-.site-logo img{
-  height:110px;
-  width:auto;
-  display:block;
-}
-.site-nav{display:flex; gap:18px; align-items:center;}
-.site-nav a{color:var(--charcoal); text-decoration:none; font-weight:600}
-/* Hero - prominent treatment */
-.hero{
-  position:relative;
-  min-height:56vh;
-  display:flex;
-  align-items:center;
-  color:var(--white);
-  background-size:cover;
-  background-position:center;
-}
-.hero::after{
-  content:'';
-  position:absolute;
-  inset:0;
-  background: rgba(44,95,45,0.55); /* forest-green overlay */
-}
-.hero-inner{position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:4rem 2rem;}
-.hero h1{font-family:var(--font-heading); font-size:44px; line-height:1.02; margin:0 0 12px; color:var(--warm-cream);}
-.hero p.lead{font-size:18px; color:var(--white); opacity:0.95; margin:0 0 18px}
-/* CTA Buttons - bolder, rounded, pulse */
-.btn{display:inline-block; padding:12px 22px; border-radius:28px; font-weight:600; cursor:pointer; text-decoration:none}
-.btn-primary{background:var(--forest-green); color:var(--white); border:none; box-shadow: 0 6px 20px rgba(44,95,45,0.18);} 
-.btn-primary:hover{background:var(--leaf-green)}
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(44,95,45,0.28);}
-  70% { box-shadow: 0 0 0 12px rgba(44,95,45,0);}
-  100% { box-shadow: 0 0 0 0 rgba(44,95,45,0);}
-}
-.btn-primary.pulse{animation: pulse 2.6s infinite;}
-/* Secondary CTA */
-.btn-ghost{background:transparent; color:var(--white); border:1px solid rgba(255,255,255,0.18)}
-/* Section utilities */
-.section{padding:3rem 1.25rem}
-.container{max-width:1100px;margin:0 auto}
-/* Footer */
-.site-footer{background:var(--charcoal); color:var(--warm-cream); padding:28px 1.25rem}
-.site-footer a{color:var(--leaf-green); text-decoration:none}
-/* Footer branding layout and footer logo sizing */
-.footer-breed{display:flex; align-items:center; justify-content:space-between; gap:12px}
-.footer-brandings.footer-logo {display:none;}
-.footer-branding .footer-logo{display:block}
-.footer-branding .footer-logo img{height:80px; width:auto; display:block}
-.footer-breed .footer-info{font-size:14px; opacity:0.95}
-/* Responsive tweaks */
-@media (max-width:800px){
-  .site-logo img{height:80px}
-  .hero h1{font-size:32px}
+.hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.4); z-index: 1; }
+.hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; padding: 20px; }
+.hero h1 { font-size: 2.5em; margin-bottom: 20px; color: inherit; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
+.hero p { font-size: 1.2em; margin-bottom: 30px; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+.hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+.hero .btn { min-width: 180px; }
+
+.content-section { padding: 60px 0; }
+.content-section h2 { font-size: 2em; margin-bottom: 1rem; }
+.content-section p { font-size: 1.1em; max-width: 800px; margin: 0 auto 1.5rem auto; }
+
+.site-footer { background-color: var(--color-primary-forest); color: var(--color-neutral-white); text-align: center; padding: 30px 0; margin-top: 50px; }
+.site-footer a { color: var(--color-primary-leaf); }
+.site-footer a:hover, .site-footer a:focus { color: var(--color-neutral-cream); }
+.footer-branding { margin-bottom: 20px; }
+.footer-logo { height: 60px; width: auto; display: block; margin: 0 auto; }
+
+@media (max-width: 768px) {
+  .site-header .container { flex-direction: column; gap: 15px; }
+  .main-nav ul { flex-direction: column; gap: 10px; align-items: center; }
+  .hero h1 { font-size: 2em; }
+  .hero p { font-size: 1em; }
+  .hero-buttons { flex-direction: column; align-items: center; }
+  .btn { width: 100%; max-width: 300px; }
+  .content-section { padding: 40px 0; }
 }
