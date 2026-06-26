@@ -7,9 +7,45 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://pictures.tripmasters.com/images/ahtl/3887/usa_-_boston_-_acorn_street-1140184-500.jpg</image:loc>
+      <image:loc>https://www.dnalandscapingco.com/assets/images/og-cover.jpg</image:loc>
       <image:title>DNA Landscaping — masonry and privacy hedge sculpting in Central Massachusetts</image:title>
     </image:image>
+  </url>
+  <url>
+    <loc>https://www.dnalandscapingco.com/services/</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dnalandscapingco.com/services/stone-masonry.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.dnalandscapingco.com/services/hedge-sculpting.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.dnalandscapingco.com/services/lawn-care.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.dnalandscapingco.com/services/hardscaping.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.dnalandscapingco.com/services/retaining-walls.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.dnalandscapingco.com/projects.html</loc>
@@ -17,12 +53,24 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://www.dnalandscapingco.com/assets/images/projects/IMG_20260606_150422.jpg</image:loc>
-      <image:title>Stone masonry and foundation work</image:title>
+      <image:loc>https://www.dnalandscapingco.com/assets/images/projects/dna_project_03.jpg</image:loc>
+      <image:title>Multi-tier water feature with pond landscaping</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://tnnursery.net/cdn/shop/articles/e21a190d2c68b0eceb74b99ddfd37038_da65feed-7d16-45b9-b872-5f27cd9f99ba.webp?v=1781265190</image:loc>
-      <image:title>Large-scale privacy hedge sculpting</image:title>
+      <image:loc>https://www.dnalandscapingco.com/assets/images/projects/dna_project_10.jpg</image:loc>
+      <image:title>Large paver patio with outdoor furniture</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dnalandscapingco.com/assets/images/projects/dna_project_26.jpg</image:loc>
+      <image:title>Natural stone steps with railing</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dnalandscapingco.com/assets/images/projects/dna_project_22.jpg</image:loc>
+      <image:title>Paver driveway installation</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dnalandscapingco.com/assets/images/projects/dna_project_17.jpg</image:loc>
+      <image:title>Manicured privacy hedge</image:title>
     </image:image>
   </url>
 </urlset>
