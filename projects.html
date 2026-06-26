@@ -1,26 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>document.documentElement.className = document.documentElement.className.replace('no-js','js');</script>
+
+  <!-- Primary SEO -->
+  <title>Project Portfolio — Masonry &amp; Hedge Sculpting | DNA Landscaping</title>
+  <meta name="description" content="View DNA Landscaping's portfolio of stone masonry, foundations, and large-scale privacy hedge sculpting projects across Westborough and Central Massachusetts.">
+  <meta name="keywords" content="Landscaping portfolio Westborough MA, Stone masonry projects, Privacy hedge sculpting Massachusetts, DNA Landscaping projects">
+  <meta name="author" content="DNA Landscaping">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="theme-color" content="#245729">
+  <link rel="canonical" href="https://www.dnalandscapingco.com/projects.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DNA Landscaping">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Project Portfolio — Masonry &amp; Hedge Sculpting | DNA Landscaping">
+  <meta property="og:description" content="See why Massachusetts homeowners trust DNA Landscaping for high-end stone masonry and large-scale privacy hedge work.">
+  <meta property="og:url" content="https://www.dnalandscapingco.com/projects.html">
+  <meta property="og:image" content="https://www.dnalandscapingco.com/assets/images/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="DNA Landscaping project portfolio — masonry and privacy hedge sculpting">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Project Portfolio — Masonry &amp; Hedge Sculpting | DNA Landscaping">
+  <meta name="twitter:description" content="High-end stone masonry and large-scale privacy hedge work across Central Massachusetts.">
+  <meta name="twitter:image" content="https://www.dnalandscapingco.com/assets/images/og-cover.jpg">
+
+  <!-- Icons & Manifest -->
   <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96">
   <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg">
   <link rel="shortcut icon" href="/favicons/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
   <link rel="manifest" href="/favicons/site.webmanifest">
 
-
-
-
-
-  <meta name="description" content="View our portfolio of stone masonry, foundations, and privacy hedge sculpting projects across Westborough and Central Massachusetts.">
-  <meta property="og:title" content="DNA Landscaping Project Portfolio">
-  <meta property="og:description" content="See why Massachusetts homeowners trust DNA Landscaping for high-end masonry and hedge work.">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects | DNA Landscaping</title>
-
   <!-- Fonts & Shared Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="brand_styles.css" />
+
+  <!-- Structured Data: Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.dnalandscapingco.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://www.dnalandscapingco.com/projects.html" }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: Project portfolio page -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "DNA Landscaping Project Portfolio",
+    "url": "https://www.dnalandscapingco.com/projects.html",
+    "description": "A portfolio of stone masonry, foundations, and large-scale privacy hedge sculpting projects across Westborough and Central Massachusetts.",
+    "isPartOf": { "@type": "WebSite", "url": "https://www.dnalandscapingco.com/" },
+    "about": { "@id": "https://www.dnalandscapingco.com/#business" }
+  }
+  </script>
 
   <style>
     /* Ensure hero text is visible */
@@ -48,10 +96,11 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header" id="site-header">
     <div class="container header-row">
       <a class="brand" href="index.html" aria-label="DNA Landscaping Home">
-        <img class="logo" src="dna_landscaping_brand_assets/logos/dna_primary_horizontal_200.png" alt="DNA Landscaping">
+        <img class="logo" src="dna_landscaping_brand_assets/logos/dna_primary_horizontal_200.png" alt="DNA Landscaping logo" width="171" height="96" fetchpriority="high" decoding="async">
       </a>
 
       <nav class="main-nav" aria-label="Main navigation">
@@ -90,7 +139,7 @@
     </div>
   </div>
 
-  <main>
+  <main id="main-content">
     <section class="hero" aria-label="Hero">
 
       <div class="hero-inner container">
@@ -112,10 +161,14 @@
 
         <!-- STONE MASONRY & FOUNDATIONS -->
         <div class="project">
-          <h2>Stone Masonry & Foundations</h2>
+          <h2>Stone Masonry &amp; Foundations</h2>
           <div class="project-images">
-            <!-- Stone images -->
-            <img src="assets/images/projects/IMG_20260606_150422.jpg" alt="Foundation work">
+            <figure style="margin:0">
+              <picture>
+                <source type="image/webp" srcset="assets/images/projects/IMG_20260606_150422.webp">
+                <img src="assets/images/projects/IMG_20260606_150422.jpg" alt="Hand-laid stone foundation and drainage trench installed along a home in Central Massachusetts" width="1200" height="1600" loading="lazy" decoding="async">
+              </picture>
+            </figure>
           </div>
         </div>
 
@@ -123,11 +176,30 @@
         <div class="project">
           <h2>Large-Scale Privacy Hedge Sculpting</h2>
           <div class="project-images">
-            <!-- Hedge images -->
-            <img src="assets/images/projects/IMG_20260606_150510 (1).jpg" alt="Hedge sculpting detail">
-            <img src="assets/images/projects/IMG_20260606_150510 (2).jpg" alt="Finished hedge">
-            <img src="assets/images/projects/IMG_20260606_150510.jpg" alt="Hedge — detail">
-            <img src="assets/images/projects/IMG_20260606_150509.jpg" alt="Hedge — pathway">
+            <figure style="margin:0">
+              <picture>
+                <source type="image/webp" srcset="assets/images/projects/IMG_20260606_150510-1.webp">
+                <img src="assets/images/projects/IMG_20260606_150510-1.jpg" alt="Sculpted arborvitae privacy hedge with rounded crown against a blue autumn sky" width="1200" height="1600" loading="lazy" decoding="async">
+              </picture>
+            </figure>
+            <figure style="margin:0">
+              <picture>
+                <source type="image/webp" srcset="assets/images/projects/IMG_20260606_150510-2.webp">
+                <img src="assets/images/projects/IMG_20260606_150510-2.jpg" alt="Finished tall evergreen privacy hedge running along a property fence line" width="1200" height="1600" loading="lazy" decoding="async">
+              </picture>
+            </figure>
+            <figure style="margin:0">
+              <picture>
+                <source type="image/webp" srcset="assets/images/projects/IMG_20260606_150510.webp">
+                <img src="assets/images/projects/IMG_20260606_150510.jpg" alt="Crew member trimming a large privacy hedge with a pole hedge trimmer" width="1200" height="1600" loading="lazy" decoding="async">
+              </picture>
+            </figure>
+            <figure style="margin:0">
+              <picture>
+                <source type="image/webp" srcset="assets/images/projects/IMG_20260606_150509.webp">
+                <img src="assets/images/projects/IMG_20260606_150509.jpg" alt="Freshly sculpted hedge wall beside a manicured lawn and ladder setup" width="1200" height="1600" loading="lazy" decoding="async">
+              </picture>
+            </figure>
           </div>
         </div>
 

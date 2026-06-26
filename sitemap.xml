@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.dnalandscapingco.com/</loc>
-    <lastmod>2026-06-06</lastmod>
-    <priority>1.00</priority>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://pictures.tripmasters.com/images/ahtl/3887/usa_-_boston_-_acorn_street-1140184-500.jpg</image:loc>
+      <image:title>DNA Landscaping — masonry and privacy hedge sculpting in Central Massachusetts</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.dnalandscapingco.com/projects.html</loc>
-    <lastmod>2026-06-06</lastmod>
-    <priority>0.80</priority>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.dnalandscapingco.com/assets/images/projects/IMG_20260606_150422.jpg</image:loc>
+      <image:title>Stone masonry and foundation work</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://tnnursery.net/cdn/shop/articles/e21a190d2c68b0eceb74b99ddfd37038_da65feed-7d16-45b9-b872-5f27cd9f99ba.webp?v=1781265190</image:loc>
+      <image:title>Large-scale privacy hedge sculpting</image:title>
+    </image:image>
   </url>
 </urlset>
