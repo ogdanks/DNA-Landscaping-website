@@ -512,12 +512,27 @@
   <script>
 
     // Reveal Animations
-
     window.addEventListener("load", () => {
-
       document.querySelectorAll(".reveal-on-load").forEach((el) => el.classList.add("reveal"));
-
     });
+
+    // Reveal-on-scroll for gallery sections
+    (function () {
+      var els = document.querySelectorAll(".reveal-on-scroll");
+      if (!("IntersectionObserver" in window)) {
+        els.forEach(function (el) { el.classList.add("reveal"); });
+        return;
+      }
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("reveal");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.05, rootMargin: "0px 0px -5% 0px" });
+      els.forEach(function (el) { observer.observe(el); });
+    })();
 
   </script>
 </body>
