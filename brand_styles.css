@@ -16,7 +16,8 @@ body{ font-family: "Open Sans", sans-serif; color:var(--char); background:var(--
 .site-header{background:var(--white);box-shadow:0 2px 8px rgba(0,0,0,0.04);position:sticky;top:0;z-index:60}
 .header-row{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
 .site-header .container{display:flex;align-items:center;justify-content:space-between;padding-top:18px;padding-bottom:18px}
-.logo{height:96px;width:auto;display:block}
+.logo{height:112px;width:auto;display:block}
+.logo img{height:112px;width:auto;display:block}
 .main-nav ul{list-style:none;display:flex;gap:18px;align-items:center;margin:0}
 .main-nav a{font-family:"Montserrat",sans-serif;font-weight:600;color:var(--char);text-decoration:none;padding:8px 10px;border-radius:6px;transition:var(--transition-fast)}
 .main-nav a:hover{color:var(--leaf);background:rgba(127,191,90,0.07)}
@@ -58,7 +59,8 @@ html.mobile-open .mobile-panel{transform: translateY(0);pointer-events:auto;}
 @media (max-width:640px){
   .main-nav{display:none}
   .mobile-menu-button{display:block}
-  .logo{height:72px}
+  .logo{height:84px}
+  .logo img{height:84px}
   .hero-title{font-size:2rem;text-align:center}
   .hero-text{text-align:center}
 }
