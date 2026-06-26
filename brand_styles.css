@@ -15,6 +15,7 @@ body{ font-family: "Open Sans", sans-serif; color:var(--char); background:var(--
 .narrow{max-width:960px;margin-left:auto;margin-right:auto}
 .site-header{background:var(--white);box-shadow:0 2px 8px rgba(0,0,0,0.04);position:sticky;top:0;z-index:60}
 .header-row{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;padding-top:18px;padding-bottom:18px}
 .logo{height:96px;width:auto;display:block}
 .main-nav ul{list-style:none;display:flex;gap:18px;align-items:center;margin:0}
 .main-nav a{font-family:"Montserrat",sans-serif;font-weight:600;color:var(--char);text-decoration:none;padding:8px 10px;border-radius:6px;transition:var(--transition-fast)}
@@ -40,6 +41,8 @@ html.mobile-open .mobile-panel{transform: translateY(0);pointer-events:auto;}
 .btn-primary{background:var(--leaf);color:var(--white)}
 .btn-primary:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(127,191,90,0.18)}
 .btn-ghost{background:transparent;border:2px solid rgba(255,255,255,0.18);color:var(--white)}
+.btn-secondary{background:var(--forest);color:var(--white);font-size:0.95rem}
+.btn-secondary:hover{background:var(--leaf-strong);transform:translateY(-2px);box-shadow:0 12px 24px rgba(36,87,41,0.15)}
 .content-section{padding:80px 0}
 .bg-soft{background:var(--white)}
 .bg-accent{background:linear-gradient(90deg,var(--white),#fbfbfa)}
@@ -98,4 +101,75 @@ select:focus-visible, textarea:focus-visible{
   .reveal-on-load, .reveal-on-scroll{transition:none !important;opacity:1 !important;transform:none !important}
   .btn-primary:hover, .service-card:hover{transform:none !important}
   html{scroll-behavior:auto}
+}
+
+/* Mobile menu toggle button (hamburger) for service pages */
+.menu-toggle{
+  display:none;
+  background:transparent;
+  border:0;
+  padding:8px;
+  cursor:pointer;
+  flex-direction:column;
+  gap:5px;
+}
+.menu-toggle span{
+  display:block;
+  width:28px;
+  height:3px;
+  background:var(--char);
+  transition:all 0.3s ease;
+  border-radius:2px;
+}
+.menu-toggle.active span:nth-child(1){
+  transform:rotate(45deg) translate(7px, 7px);
+}
+.menu-toggle.active span:nth-child(2){
+  opacity:0;
+}
+.menu-toggle.active span:nth-child(3){
+  transform:rotate(-45deg) translate(7px, -7px);
+}
+
+/* Mobile navigation menu for service pages */
+.mobile-menu{
+  position:fixed;
+  top:0;
+  right:-100%;
+  width:280px;
+  height:100vh;
+  background:var(--white);
+  box-shadow:-4px 0 20px rgba(0,0,0,0.1);
+  z-index:100;
+  transition:right 0.3s ease;
+  padding:80px 20px 20px;
+}
+.mobile-menu.active{
+  right:0;
+}
+.mobile-menu ul{
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+.mobile-menu a{
+  font-family:"Montserrat",sans-serif;
+  font-weight:600;
+  color:var(--char);
+  text-decoration:none;
+  display:block;
+  padding:12px 16px;
+  border-radius:8px;
+  transition:all 0.3s ease;
+}
+.mobile-menu a:hover,
+.mobile-menu a.active{
+  background:var(--leaf);
+  color:var(--white);
+}
+
+@media (max-width:768px){
+  .menu-toggle{display:flex}
+  .main-nav{display:none}
 }
