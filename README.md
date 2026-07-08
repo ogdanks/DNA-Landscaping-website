@@ -1,5 +1,5 @@
 # DNA Landscaping Website
-Official website for [DNA Landscaping](http://www.dnalandscapeco.com).
+Official website for [DNA Landscaping](https://www.dnalandscapingco.com/).
 
 ## Brand Identity
 - **Tagline**: Precision. Growth. Natural Beauty.

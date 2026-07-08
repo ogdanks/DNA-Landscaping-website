@@ -1,13 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.dnalandscapingco.com/</loc>
-    <lastmod>2026-06-06</lastmod>
-    <priority>1.00</priority>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.dnalandscapingco.com/assets/images/og-cover.jpg</image:loc>
+      <image:title>DNA Landscaping — masonry and privacy hedge sculpting in Central Massachusetts</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.dnalandscapingco.com/services/</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dnalandscapingco.com/services/stone-masonry.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.dnalandscapingco.com/services/hedge-sculpting.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.dnalandscapingco.com/services/lawn-care.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.dnalandscapingco.com/services/hardscaping.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.dnalandscapingco.com/services/retaining-walls.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.dnalandscapingco.com/projects.html</loc>
-    <lastmod>2026-06-06</lastmod>
-    <priority>0.80</priority>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.dnalandscapingco.com/assets/images/projects/dna_project_03.jpg</image:loc>
+      <image:title>Multi-tier water feature with pond landscaping</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dnalandscapingco.com/assets/images/projects/dna_project_10.jpg</image:loc>
+      <image:title>Large paver patio with outdoor furniture</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dnalandscapingco.com/assets/images/projects/dna_project_26.jpg</image:loc>
+      <image:title>Paver walkway with professional edging in Central Massachusetts</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dnalandscapingco.com/assets/images/projects/dna_project_22.jpg</image:loc>
+      <image:title>Natural stone masonry by DNA Landscaping in Westborough, Massachusetts</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dnalandscapingco.com/assets/images/projects/dna_project_16.jpg</image:loc>
+      <image:title>Custom water feature with natural stone landscaping</image:title>
+    </image:image>
   </url>
 </urlset>

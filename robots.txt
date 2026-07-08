@@ -1,0 +1,12 @@
+# robots.txt for DNA Landscaping
+# https://www.dnalandscapingco.com/
+
+User-agent: *
+Allow: /
+
+# Keep low-value/utility pages out of search results
+Disallow: /thanks
+Disallow: /thanks/
+Disallow: /thanks.html
+
+Sitemap: https://www.dnalandscapingco.com/sitemap.xml
